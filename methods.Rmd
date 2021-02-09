@@ -3,7 +3,8 @@ title: "Methods"
 author: "Andrew Mertens"
 output:
   html_document:
-    df_print: paged
+    toc: true  
+    toc_float: true  
 ---
 
 ### Data  
@@ -85,9 +86,8 @@ __Improved combined WASH:__
 
 We will also calculate population-attributable fractions (PAF):  
 $$ 
-PAF=\frac{p_c \times (RR_{adj}-1)}{RR_{adj}}
+PAF= \frac{p_c \times (RR_{adj}-1)}{RR_{adj}}
 $$
-{PAF = }frac{{p}_{{c }}{cdot } left({{RR}}_{{adj }}{- 1} right)}{{{RR}}_{{adj}}}  
 
 Which are estimates of the percent of cases in the population that could have been prevented if the whole population had their exposure shifted to a lower risk level, by dividing the PAR by the baseline risk. Pc is the proportion of cases that are exposed. We will calculate percentile-based 95% confidence intervals (CIs) for PARs and PAFs using a nonparametric, clustered bootstrap (1000 iterations), with cluster resampling with replacement.^17^  
 

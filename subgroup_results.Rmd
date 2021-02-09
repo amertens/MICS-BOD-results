@@ -1,5 +1,5 @@
 ---
-title: "Primary figures and tables"
+title: "Estimates stratified by urban/rural household location"
 author: "Andrew Mertens"
 output:
   html_document:
@@ -10,14 +10,9 @@ output:
 
 
 
-###To do
+### Interpretation
 
-  *  Put saved tables after figures
-  *  Adapt figure captions
-  *  Put main interpretations after figures
-  *  Write results section with references to figures
-  *  Write limitation/open questions
-
+XXXXXXXXXXXXXXXXXXXXXXX
 
 
 
@@ -73,7 +68,7 @@ ec_conc_figure <- readRDS(here("MICS-WASH-BOD/figures/ec-conc-figure-object.RDS"
 ## Subgroup figures
 
 
-```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 6}
 p_rural_pooled_bin
 ```
 

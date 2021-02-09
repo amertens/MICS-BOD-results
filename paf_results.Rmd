@@ -1,5 +1,5 @@
 ---
-title: "Primary figures and tables"
+title: "Population attributable fractions"
 author: "Andrew Mertens"
 output:
   html_document:
@@ -9,14 +9,6 @@ output:
 <!-- output: html_notebook -->
 
 
-
-###To do
-
-  *  Put saved tables after figures
-  *  Adapt figure captions
-  *  Put main interpretations after figures
-  *  Write results section with references to figures
-  *  Write limitation/open questions
 
 
 

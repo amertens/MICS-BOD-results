@@ -1,22 +1,21 @@
 ---
-title: "Primary figures and tables"
+title: "Primary figures"
 author: "Andrew Mertens"
 output:
   html_document:
     df_print: paged
 ---
 
-<!-- output: html_notebook -->
 
 
 
-###To do
+### Primary findings
 
-  *  Put saved tables after figures
-  *  Adapt figure captions
-  *  Put main interpretations after figures
-  *  Write results section with references to figures
-  *  Write limitation/open questions
+
+### Limitations
+
+
+### Open questions
 
 
 

@@ -3,6 +3,9 @@ suppressPackageStartupMessages({
   library(tidyverse)
   library(here)
   library(stringr)
+  library(prettydoc)
+  library(rmdformats)
+  library(tufte)
 })
 
 ## variables I need for my site 

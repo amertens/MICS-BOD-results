@@ -3,7 +3,8 @@ title: "Lancet Commission on WASH & Health MICS BOD analysis"
 author:  "Andrew Mertens"
 output:
   html_document:
-    fig_width: 1
+    toc: true  
+    toc_float: true  
 ---
 
 ----

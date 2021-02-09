@@ -6,7 +6,7 @@ navbar:
       href: methods.html
     - text: "Primary figures"
       href: primary_results.html
-    - text: "Population attributable fraction figures"
+    - text: "PAF figures"
       href: paf_results.html
     - text: "Tables"
       href: tables.html
@@ -20,7 +20,7 @@ navbar:
 output_dir: "."
 output:
   html_document:
-    theme: cerulean
-    highlight: textmate
+    theme: journal
+    highlight: espresso
 #    include:
 #      after_body: _footer.html

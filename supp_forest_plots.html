@@ -16,7 +16,7 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -24,24 +24,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -106,33 +89,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 51px;
+  padding-top: 61px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .dropdown-submenu {
   position: relative;
@@ -355,7 +338,7 @@ div.tocify {
   <a href="primary_results.html">Primary figures</a>
 </li>
 <li>
-  <a href="paf_results.html">Population attributable fraction figures</a>
+  <a href="paf_results.html">PAF figures</a>
 </li>
 <li>
   <a href="tables.html">Tables</a>
@@ -391,30 +374,40 @@ div.tocify {
 <!-- editor_options:  -->
 <!--   chunk_output_type: inline -->
 <p><em>Figure details for all plots:</em> Each plot shows country-specific and pooled estimates for each WASH characteristic-outcome combination (printed in each figure title). All estimates are adjusted for potential confounders. Sample size for each estimate are in parentheses. Multi-panel figures compare categories of WASH characteristics (printed at the top of each panel) to the most-improved reference level (printed after <code>ref=</code> in the X-axis label). Points are colored by the MICS region, with pooled estimates in black, and labeled as pooled estimates from random effects (RE) or fixed effects (FE) models.</p>
-<div id="diarrhea" class="section level2">
+<div id="diarrhea" class="section level2 tabset tabset-fade tabset-pills">
 <h2>Diarrhea</h2>
+<!-- ### EC_H {.tabset .tabset-fade .tabset-pills} -->
+<!-- ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 5} -->
+<!--       print(plist$Diarrhea.EC_H) -->
+<!-- ``` -->
 <p><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-1.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-2.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-3.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-4.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-5.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-6.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-7.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-8.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-9.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-10.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-11.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-12.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-13.png" width="960" /></p>
 </div>
-<div id="anthropometry" class="section level2">
+<div id="anthropometry" class="section level2 tabset tabset-fade tabset-pills">
 <h2>Anthropometry</h2>
-<div id="stunting" class="section level4">
-<h4>Stunting</h4>
+<div id="stunting" class="section level3">
+<h3>Stunting</h3>
+<p><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-1.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-2.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-3.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-4.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-5.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-6.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-7.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-8.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-9.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-10.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-11.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-12.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-2-13.png" width="960" /></p>
 </div>
-<div id="wasting" class="section level4">
-<h4>Wasting</h4>
+<div id="wasting" class="section level3">
+<h3>Wasting</h3>
+<p><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-1.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-2.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-3.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-4.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-5.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-6.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-7.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-8.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-9.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-10.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-11.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-12.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-3-13.png" width="960" /></p>
 </div>
-<div id="haz" class="section level4">
-<h4>HAZ</h4>
+<div id="haz" class="section level3">
+<h3>HAZ</h3>
+<p><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-1.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-2.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-3.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-4.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-5.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-6.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-7.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-8.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-9.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-10.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-11.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-12.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-4-13.png" width="960" /></p>
 </div>
-<div id="whz" class="section level4">
-<h4>WHZ</h4>
+<div id="whz" class="section level3">
+<h3>WHZ</h3>
+<p><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-1.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-2.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-3.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-4.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-5.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-6.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-7.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-8.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-9.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-10.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-11.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-12.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-5-13.png" width="960" /></p>
 </div>
 </div>
 <div id="acute-respiratory-infections" class="section level2">
 <h2>Acute respiratory infections</h2>
+<p><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-1.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-2.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-3.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-4.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-5.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-6.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-7.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-8.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-9.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-10.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-11.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-12.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-6-13.png" width="960" /></p>
 </div>
 <div id="mortality" class="section level2">
 <h2>Mortality</h2>
+<p><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-1.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-2.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-3.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-4.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-5.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-6.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-7.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-8.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-9.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-10.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-11.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-12.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-7-13.png" width="960" /></p>
 </div>
 
 

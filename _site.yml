@@ -2,6 +2,8 @@ name: "R Markdown Websites Tutorial"
 navbar:
   title: "HOME"
   left:
+    - text: "Methods"
+      href: methods.html
     - text: "Primary results"
       href: primary_results.html
     - text: "Forest plots"

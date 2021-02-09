@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Andrew Mertens" />
+
+
+<title>Methods</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 51px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h2 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h3 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h4 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h5 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.section h6 {
+  padding-top: 56px;
+  margin-top: -56px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">HOME</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="methods.html">Methods</a>
+</li>
+<li>
+  <a href="primary_results.html">Primary results</a>
+</li>
+<li>
+  <a href="supp_forest_plots.html">Forest plots</a>
+</li>
+<li>
+  <a href="tables.html">Tables</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Methods</h1>
+<h4 class="author">Andrew Mertens</h4>
+
+</div>
+
+
+<div id="data" class="section level3">
+<h3>Data</h3>
+<p>We will analyze data from household surveys with integrated water quality testing conducted as part of the UNICEF Multiple Indicator Cluster Surveys (MICS) program. We will use both nationally representative MICS6 surveys as well as sub-national surveys. The household water quality data includes E. coli concentrations, and the household surveys include questionnaire responses used to categorize the level of WASH service based on the JMP WASH ladder definitions. In addition, household surveys contain information on number of children, parental education, religion/ethnic group, household size and construction quality, and asset and animal ownership. Separate questionnaires in the surveys collect health Information for children under 5 years old including measures of diarrhea, respiratory infections, fever, anthropometry, breastfeeding, child mortality, birthweight, early child development index, and nutritional status.</p>
+</div>
+<div id="approach" class="section level3">
+<h3>Approach</h3>
+<p>Outcomes: The primary outcome of interest is 14-day caregiver recall of diarrhea disease in children under 5 years. Secondary outcomes of interest are symptoms of acute respiratory infections in children &lt;5, child anthropometry status (length for age Z-scores and weight-for-length Z-scores, as well as indicators for child stunting and wasting), and under-5 child mortality. Exposures: The primary exposure contrast of interest is between households with drinking water free of contamination at the point of use compared to households with contaminated water, as measured by E. coli concentration. We will also examine water contamination at the drinking water point of collection and point of use, and we will contrast all levels of the JMP WASH service ladder, using more improved categories as the reference: Level of water quality (point of use): Primary stratification: Contaminated household drinking water supply (E. coli concentrations ≥1 per 100ml) Uncontaminated household drinking water supply (E. coli concentrations &lt;1 per 100ml) Secondary stratification: Very high risk (&gt;100 E coli/100ml) High risk (11-100 E coli/100ml) Moderate risk (1-10 E coli/100ml) Low risk (&lt;1 E coli/100ml) Level of water quality (point of collection): Primary stratification: Contaminated source drinking water supply (E. coli concentrations ≥1 per 100ml) Uncontaminated source drinking water supply (E. coli concentrations &lt;1 per 100ml) Secondary stratification: Very high risk (&gt;100 E coli/100ml) High risk (11-100 E coli/100ml) Moderate risk (1-10 E coli/100ml) Low risk (&lt;1 E coli/100ml)</p>
+<p>Level of water supply: Surface water (no service) Unimproved - drinking water from an unprotected dug well or unprotected spring Limited - drinking water from an improved source for which collection time exceeds 30 minutes for a roundtrip including queuing. Basic - drinking water from an improved source (piped water, boreholes or tubewells, protected dug wells, protected springs, rainwater, and packaged or delivered water), provided collection time is not more than 30 minutes for a roundtrip including queuing, Continuous drinking water on premises from an improved water source (highest measured level of service). Level of sanitation service Open defecation (no service) Unimproved - use of pit latrines without a slab or platform, hanging latrines or bucket latrines Limited - use of improved facilities (flush/pour flush to piped sewer system, septic tanks or pit latrines; ventilated improved pit latrines, composting toilets or pit latrines with slabs) shared between two or more households Basic - use of improved facilities which are not shared with other households Basic with high community coverage (&gt;75% of the population in the community use basic sanitation services, highest measured level of service) Level of hygiene service None (no facility) Limited - availability of a handwashing facility on premises without soap or water Basic - availability of a handwashing facility on premises with soap and water (highest measured level of service measured) Combined levels of WASH service of interest Safely managed water: Primary stratification: improved source located on the premises with water available and free of E. coli contamination at the point of use compared to households without safely managed water. Secondary stratifications: Improved source not available when needed, with E. coli contamination. Improved source not available when needed, without E. coli contamination. Improved source located on the premises and available when needed, with E. coli contamination. Improved source located on the premises with water available when needed, without E. coli contamination (highest measured level of service). Improved combined WASH: Primary stratification: Highest level of sanitation and hygiene and a safely managed water supply compared to households without any of the highest level of sanitation, hygiene, or water safely managed water. Secondary stratification: Highest level of sanitation, hygiene, and water supply (without including status of water contamination) compared to households without any of the highest level of sanitation, hygiene, or water supply.</p>
+</div>
+<div id="statistical-approach" class="section level3">
+<h3>Statistical approach:</h3>
+<p>The previous analysis of risk of piped water contamination from Egyptian Demographic and Health Survey data used propensity score matching (PSM) to control for confounding by wealth and location,6 but prior research on causal inference from cross-sectional data found no difference in model bias or efficiency between classical multivariate regression and PSM or more complicated techniques like targeted maximum likelihood estimation.13 Therefore, for analytic simplicity across 30 surveys, and to avoid failing to find adequate matching, we will use regression models, adjusting for covariates listed below. To estimate relative risks between levels of the JMP service ladders rather than odds ratios, we will use modified Poisson regressions for binary outcomes, and linear regressions continuous outcomes.14 We will include random effects for sampling clusters to account for the survey design. We will estimate adjusted population attributable risks (PAR) using predictions from the modified Poisson regression models. PARs are estimated from the difference between the predicted outcomes under observed exposure and covariate distributions and outcomes predicted under a counterfactual scenario where the whole population had their exposure shifted to a lower risk level: <span class="math inline">\(PAR=Pr(disease) – Pr(disease | no exposure)\)</span>.16 We will also calculate population-attributable fractions (PAF):  Which are estimates of the percent of cases in the population that could have been prevented if the whole population had their exposure shifted to a lower risk level, by dividing the PAR by the baseline risk. Pc is the proportion of cases that are exposed. We will calculate percentile-based 95% confidence intervals (CIs) for PARs and PAFs using a nonparametric, clustered bootstrap (1000 iterations), with cluster resampling with replacement.17 We will assess potential bias in estimates of relative risk by contrasting them to comparable estimates of relative risk from existing meta-analyses of randomized controlled trials.</p>
+<p><strong>Adjustment covariates:</strong> Asset-based wealth index (excluding WASH variables) Maternal education Maternal age Breastfeeding history Child age Child sex Birth order Urban/rural location Household type/construction Number of household residents Number of children under 5yrs in the household Type of flooring Presence of animals in the household Cooking stove type</p>
+<p>We will pre-screen covariates to assess whether they are associated with each outcome prior to including them in the model. We will use a bivariate likelihood ratio test to assess the association between each outcome and each covariate and will include covariates with a p-value &lt;0.2 in the analysis. We will also exclude or collapse covariates that have little variation in the study population (prevalence &lt;5%) and exclude covariates with &gt;50% missingness. For unordered categorical and indicator adjustment covariates, we will include missingness as its own category. For missingness in other adjustment covariates, we will use multiple imputation.18 For binary outcomes, due to the sparsity in some outcomes, we will only include one covariate per 10 cases of the outcome in the sparsest strata of the exposure, selecting the variables by rank ordering the likelihood ratio test.19</p>
+</div>
+<div id="meta-analysis" class="section level3">
+<h3>Meta-analysis:</h3>
+<p>We will estimate RRs, PARs and PAFs within each individual survey, and then pool estimates across surveys using random effects meta-analysis models.19 This modeling approach assumes that surveys are randomly selected from a hypothetical population of MICS surveys that could have been conducted in the past or future, and that this hypothetical population has a normally distributed spread of true relative risks. Random effects meta-analysis models incorporate between-survey variance in estimates and therefore have more conservative confidence intervals if there is heterogeneity across study estimates than inverse-variance weighted fixed-effects estimates, the common alternative.20 We will pool estimates both overall, by WHO region, and by UN Sustainable Development Goals region. Subgroup analysis: We will repeat estimates with households stratified into urban or rural locations to inform decisions about rural and urban investment in WASH improvements.</p>
+</div>
+<div id="supplementary-analyses" class="section level3">
+<h3>Supplementary analyses</h3>
+<p>As a sensitivity analysis, we will re-estimate relative risks using targeted maximum likelihood estimation, fit using flexible ensemble machine learning models, to confirm we are not missing any complex non-linear associations or interactions among the confounders.15 We will include simple means, generalized linear models, generalized additive models, penalized regressions, and gradient boosting machines in the machine-learning ensemble. We will also re-estimate pooled relative risks using a one-step hierarchical model, with children nested in households nested in clusters nested in countries. We will also re-estimate the pooled parameters using fixed effects (inverse-variance weighted) models, which assume that there is a single true parameter value. We will repeat the analyses using a complete case analysis instead of multiple imputation on adjustment covariates, and we will repeat the analyses unadjusted for potential confounders. We will also estimate the effects of stochastic interventions to shift the distributions of E. coli concentration in drinking water as a supplementary analysis. Rather than estimating the effect of shifting the whole population to a static, low risk reference level, stochastic intervention analyses estimate the effect of a more realistic change: a downward shift in the continuous distribution of E. coli concentration, or a shift in the percentages of households at each category of the JMP WASH ladder. Because E. coli concentrations are only measured within a subset of households, we will also impute the level of E. coli contamination using the pre-specified adjustment covariates and the other household WASH conditions. We will conduct multiple imputation using the mice package in R to impute the level of E. coli contamination, and we will compare imputation accuracy by comparing the imputed values to the observed level of contamination within the subsets of households measuring water contamination.18</p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

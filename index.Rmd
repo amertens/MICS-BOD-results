@@ -1,6 +1,6 @@
 ---
-title: "Making free websites with RStudio's R Markdown"
-author:  "[Julie Lowndes](https://github.com/jules32) at [NCEAS](https://www.nceas.ucsb.edu/), 12/14/16"
+title: "Lancet Commission on WASH & Health MICS BOD analysis"
+author:  "Andrew Mertens"
 output:
   html_document:
     fig_width: 1
@@ -8,23 +8,42 @@ output:
 
 ----
 
-It's possible to create well-designed websites for free using [RStudio's R Markdown](http://rmarkdown.rstudio.com/) and hosting them on [Github](http://github.com). This is very new and incredibly cool. It is a really powerful way to communicate science using the same reproducible workflow you use for your analyses and collaborations.
+**Background**
+  Diarrheal disease causes over a million deaths each year and is a leading cause of child mortality. Inadequate drinking water, sanitation, and hygiene (WASH) are important risk factors for diarrheal disease, particularly in low- or middle- income countries (LMIC).3  Diarrheal disease from inadequate WASH conditions was estimated to cause 829,000 deaths in 2016, including 5.3% of deaths (297,000) in children under 5 years old.4 In particular, inadequate water was estimated to cause 484,741 deaths from diarrheal disease.4 In addition to increasing the risk of diarrheal disease, poor WASH conditions are associated with acute respiratory infections, poor child growth, and increased mortality.4
+  The WASH-attributable burden of disease estimates of the WHO for the year 2016 used access to point-of-use water treatment and safe water storage as the low-risk drinking-water reference level, rather than using access to continuous, high quality piped water. 4 This choice was due to a lack of high-quality studies estimating the decrease in risk of improving water quality through the better operation of piped water systems in LMICs.5 However, studies from Puerto Rico and Egypt that compare uncontaminated or continuous piped water with contaminated or intermittent piped water supply find that having a high quality piped water supply was associated with a significantly decreased risk of child diarrhea,6,7 though a study from India only found an effect of continuous piped water on child diarrhea in low-income households.8 
+	Where possible, risk factor-attributable burden of disease estimates are based on randomized or matched control trials or prospective cohorts,3 which are currently not available to estimate the effect of continuous, high quality piped water across a range of contexts, and are not necessarily representative samples. Historical experience in the WASH field,9 combined with null results of recent trials intervening to provide more basic levels of services, indicates that providing higher service levels is a public health policy imperative, and more robust evidence would help support the case for investment. Due to these limitations in the WASH epidemiologic literature regarding transitions to higher levels of service we propose alternative estimation methods that use new observational, nationally-representative cross-sectional surveys that include water quality data. The WHO/UNICEF Joint Monitoring Programme for Water Supply, Sanitation, and Hygiene (JMP) draws upon household surveys, censuses, and administrative data on WASH to produce SDG reports. Since 2012, the JMP team has worked with the UNICEF team that manages the Multiple Indicator Cluster Surveys (MICS) programme to develop a module for testing water quality in household surveys and produce data on E. coli concentrations in drinking water. The module has now been implemented in over 30 surveys from countries with a range of WASH contexts, and these survey data can be used to identify both what types of water supplies are used (e.g. piped water, other improved sources such as protected groundwater, unimproved sources, and surface water) and the degree to which these water supplies are contaminated with faecal indicator bacteria.10 We used these MICS datasets to estimate the change in risk of diarrheal disease and other child health outcomes as populations move from lower levels of drinking water to safely managed water, as well as estimate the change in risk in moving to improved sanitation, improved hygiene, and the combination of water, sanitation, and hygiene. Following recommendations from prior WASH burden of disease research, we estimated the population attributable risks and fractions of poor WASH conditions.11
 
-***Creating websites with R Markdown can be done without knowing R or HTML, CSS, etc,*** and that's where we'll start. However, R Markdown integrates with these tools so the more you know the more complex and beautiful your website can be. This tutorial borrows heavily from a lot of great tutorials and resources you should check out too -- there are links throughout. 
+**Objectives**
+1.	Estimate the relative risk of diarrheal disease within populations of MICS survey countries between levels of water, sanitation, and hygiene service ladders, including between contaminated and uncontaminated water.12
+2.	Estimate the population risks and fractions of diarrheal disease attributable to different tiers of the WASH service ladders, the number, and proportion of cases of diarrhea that could have been prevented if all households in a population had improved to higher levels of WASH conditions.
+3.	Estimate the combined effects of improving water, sanitation, and hygiene conditions on reducing diarrheal disease.
+4.	Examine unmeasured confounding in relative risk estimates from MICS data by comparing them to the relative risks from existing meta-analyses of randomized trials.
+5.	Repeat the above objectives for secondary outcomes of respiratory infections and child anthropometry measurements.
 
-The best way to learn is to follow along with your own laptop, but all are welcome. We'll spend half the time with the tutorial and half the time for you to work on your own website and get help. If you bring your laptop please do this beforehand: 
-
-1. install [RStudio](https://www.rstudio.com/products/rstudio/download/)
-1. create a [GitHub]((http://github.com)) account ([advice](http://happygitwithr.com/github-acct.html))
-1. set up your computer to talk to GitHub
-    - have RStudio linked directly (preferred) ([instructions sections 8-14](http://happygitwithr.com/hello-git.html))
-    - or install the [Desktop App](https://desktop.github.com/)
-    - or be familiar with git commands for the command line ([tutorial](https://try.github.io/levels/1/challenges/1))
 
 ----
 
 
-**Examples:**
+**References:**
 
-We have been using R Markdown for the Ocean Health Index:  [**ohi-science.org/ohi-global**](http://ohi-science.org/ohi-global).  
-And R Markdown is much more than just websites -- here's a [**one-minute video about R Markdown**](http://rmarkdown.rstudio.com/lesson-1.html) to get you excited. 
+1.	GBD 2015 Mortality and Causes of Death Collaborators. Global, regional, and national life expectancy, all-cause mortality, and cause-specific mortality for 249 causes of death, 1980-2015: a systematic analysis for the Global Burden of Disease Study 2015. Lancet Lond. Engl. 388, 1459–1544 (2016).
+2.	WHO | Disease burden and mortality estimates. WHO http://www.who.int/healthinfo/global_burden_disease/estimates/en/.
+3.	Global, regional, and national comparative risk assessment of 79 behavioural, environmental and occupational, and metabolic risks or clusters of risks, 1990–2015: a systematic analysis for the Global Burden of Disease Study 2015. Lancet Lond. Engl. 388, 1659–1724 (2016).
+4.	Prüss-Ustün, A. et al. Burden of disease from inadequate water, sanitation and hygiene for selected adverse health outcomes: An updated analysis with a focus on low- and middle-income countries. Int. J. Hyg. Environ. Health 222, 765–777 (2019).
+5.	Prüss-Ustün, A. et al. Burden of disease from inadequate water, sanitation and hygiene in low- and middle-income settings: a retrospective analysis of data from 145 countries. Trop. Med. Int. Health 19, 894–905 (2014).
+6.	Roushdy, R., Sieverding, M. & Radwan, H. The impact of water supply and sanitation on child health: Evidence from Egypt. Poverty Gend. Youth (2012) doi:doi.org/10.31899/pgy3.1016.
+7.	Hunter, P. R., Ramírez Toro, G. I. & Minnigh, H. A. Impact on diarrhoeal illness of a community educational intervention to improve drinking water quality in rural communities in Puerto Rico. BMC Public Health 10, 219 (2010).
+8.	Ercumen, A. et al. Upgrading a Piped Water Supply from Intermittent to Continuous Delivery and Association with Waterborne Illness: A Matched Cohort Study in Urban India. PLOS Med. 12, e1001892 (2015).
+9.	Pickering, A. J. et al. The WASH Benefits and SHINE trials: interpretation of WASH intervention effects on linear growth and diarrhoea. Lancet Glob. Health 7, e1139–e1146 (2019).
+10.	Water quality monitoring | JMP. https://washdata.org/monitoring/drinking-water/water-quality-monitoring.
+11.	Clasen, T. et al. Estimating the impact of unsafe water, sanitation and hygiene on the global burden of disease: evolving and alternative methods. Trop. Med. Int. Health TM IH 19, 884–893 (2014).
+12.	Bain, R., Johnston, R., Mitis, F., Chatterley, C. & Slaymaker, T. Establishing Sustainable Development Goal Baselines for Household Drinking Water, Sanitation and Hygiene Services. Water 10, 1711 (2018).
+13.	Spiegelman, D. & Zhou, X. Evaluating Public Health Interventions: 8. Causal Inference for Time-Invariant Interventions. Am. J. Public Health 108, 1187–1190 (2018).
+14.	Zou, G. A modified poisson regression approach to prospective studies with binary data. Am. J. Epidemiol. 159, 702–706 (2004).
+15.	Gruber, S. & Laan, M. van der. Targeted Maximum Likelihood Estimation: A Gentle Introduction. UC Berkeley Div. Biostat. Work. Pap. Ser. (2009).
+16.	Greenland, S. & Drescher, K. Maximum likelihood estimation of the attributable fraction from logistic models. Biometrics 49, 865–872 (1993).
+17.	Greenland, S. Interval estimation by simulation as an alternative to and extension of confidence intervals. Int. J. Epidemiol. 33, 1389–1397 (2004).
+18. Buuren, S. van & Groothuis-Oudshoorn, K. mice: Multivariate Imputation by Chained Equations in R. J. Stat. Softw. 45, 1–67 (2011).
+19. Hedges, L. V. & Vevea, J. L. Fixed- and random-effects models in meta-analysis. Psychol. Methods 3, 486–504 (1998). 
+20. Chen, Q. et al. Too Many Covariates and Too Few Cases? – A Comparative Study. Stat. Med. 35, 4546–4558 (2016).
+

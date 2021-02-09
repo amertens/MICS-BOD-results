@@ -1,6 +1,7 @@
 ## packages I want loaded for all pages of my site
 suppressPackageStartupMessages({
   library(tidyverse)
+  library(here)
   library(stringr)
 })
 

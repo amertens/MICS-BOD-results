@@ -1,9 +1,9 @@
 ---
 title: "Primary figures and tables"
 author: "Andrew Mertens"
-output: 
-  word_document:
-    reference_docx: MICS_WASH_BOD_analysis_plan.docx
+output:
+  html_document:
+    df_print: paged
 ---
 
 <!-- output: html_notebook -->
@@ -77,8 +77,8 @@ ec_conc_figure <- readRDS(here("MICS-WASH-BOD/figures/ec-conc-figure-object.RDS"
 ## Primary figures
 
 
-```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
-p_multi_pooled_HH
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3}
+p_prim_pooled_HH
 ```
 
 #Update figure captions
@@ -87,14 +87,6 @@ __Figure 1.__ Random-effects pooled relative risks, pooled over the Bangladesh, 
 
 
 
-```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
-p_multi_pooled_WQ
-```
-
-
-```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 6}
-p_multi_pooled
-```
 
 __Figure 2.__ Random-effects pooled relative risks, pooled over the MICS survey countries with water quality measures, across the 4 outcomes for WASH conditions stratified into levels of the Joint Medical Program WASH ladder or by level of E.coli concentration. 
 The row labels list the WASH characteristic and the reference (most improved) level of contrast, and the Y-axis labels are the contrasting higher level of risk.
@@ -116,10 +108,7 @@ __Figure 9.__ Country-specific population attributable fractions (PAFs) estimate
 Note: the sensitivity analyses are based on pooled estimated from binary codings of WASH characteristics for easier comparison between the primary and sensitivity results across the WASH conditions.
 
 
-```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
-p_rural_pooled
 
-```
 
 __Figure S1.__ Comparison of adjusted relative risks between urban and rural households across country-specific estimates of the relative risk of diarrhea. Eighty-one percent of Bangladeshi households are rural, 72% of Pakistani households are rural, and 65% of Zimbabwean households are rural. Missing estimates are from WASH-condition and outcome combinations with rarity in one strata. Relative risks are generally higher in urban populations, though the difference is small or imprecise.
 

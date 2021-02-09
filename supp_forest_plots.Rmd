@@ -4,8 +4,6 @@ author: "Andrew Mertens"
 output:
   html_document:
     df_print: paged
-  word_document:
-    reference_docx: MICS_WASH_BOD_analysis_plan.docx
 ---
 
 <!-- output: html_notebook -->

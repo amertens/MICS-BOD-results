@@ -3,8 +3,6 @@ title: "Tables"
 author: "Andrew Mertens"
 date: "Sept 28, 2020"
 output:
-  word_document:
-    reference_docx: MICS_WASH_BOD_analysis_plan.docx
   html_document:
     df_print: paged
 ---
@@ -48,7 +46,7 @@ panderOptions('keep.trailing.zeros', TRUE)
 
 ```{r, echo=F, warning=F, message=F}
 
-load(here("tables/table_objects.Rdata"))
+load(here("MICS-WASH-BOD/tables/table_objects.Rdata"))
 
 pander(HH_tab, digits=2, caption = "Descriptive statistics of covariate by country")
 pander(EC_risk_H, digits=2, caption = "Descriptive statistics of covariate by country")
@@ -60,7 +58,7 @@ pander(WASHtab, digits=2, caption = "Descriptive statistics of covariate by coun
 pander(anthro_tab, digits=2, caption = "Descriptive statistics of covariate by country")
 pander(infection_tab, digits=2, caption = "Descriptive statistics of covariate by country")
 
-
+tab1
 
 pander(tab1[c(1,2:6)], digits=2, caption = "Descriptive statistics of covariates by country")
 pander(tab1[c(1,7:11)], digits=2, caption = "Descriptive statistics of covariates by country")

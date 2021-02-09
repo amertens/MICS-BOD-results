@@ -1,0 +1,94 @@
+---
+title: "Primary figures and tables"
+author: "Andrew Mertens"
+output:
+  html_document:
+    df_print: paged
+---
+
+<!-- output: html_notebook -->
+
+
+
+###To do
+
+  *  Put saved tables after figures
+  *  Adapt figure captions
+  *  Put main interpretations after figures
+  *  Write results section with references to figures
+  *  Write limitation/open questions
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(warn = -1) 
+library(janitor)
+library(knitr)
+library(here)
+library(table1)
+library(rvest)
+
+source(here("0-config.R"))
+
+
+op = function(x, d=2) sprintf(paste0("%1.",d,"f"), x) 
+ library(pander)
+panderOptions('digits', 2)
+panderOptions('round', 2)
+panderOptions('keep.trailing.zeros', TRUE)
+panderOptions('graph.fontsize', 8)
+
+panderOptions('table.alignment.default', function(df)
+    ifelse(sapply(df, is.numeric), 'right', 'left'))
+panderOptions('table.split.table', Inf)
+panderOptions('big.mark', ",")
+panderOptions('keep.trailing.zeros', TRUE)
+
+
+#load figures
+load(here("MICS-WASH-BOD/figures/primary_figure_objects.Rdata"))
+
+
+load(here("MICS-WASH-BOD/figures/PAF_figure_objects.Rdata"))
+#[1] "p_PAF"        "p_pooled_PAF"
+
+load(here("MICS-WASH-BOD/figures/subgroup_figure_objects.Rdata"))
+
+load(here("MICS-WASH-BOD/figures/sensitivity_figure_objects.Rdata"))
+# [5] "p_tmle_comp_diff"        "p_tmle_comp_diff_forest" "p_tmle_comp_RR"          "p_tmle_comp_RR_forest"  
+ # [9] "p_unadj_comp_diff"       "p_unadj_comp_RR"
+
+load(here("MICS-WASH-BOD/figures/mult_sensitivity_figure_objects.Rdata"))
+#[1] "p_basic"           "p_multi_pooled_HH_sens" "p_multi_pooled_WQ_sens"
+
+ec_conc_figure <- readRDS(here("MICS-WASH-BOD/figures/ec-conc-figure-object.RDS"))
+
+
+```
+
+
+
+## Subgroup figures
+
+
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
+p_rural_pooled_bin
+```
+
+
+
+__Figure 10.__ Comparison of adjusted relative risks between urban and rural households across country-specific estimates of the relative risk of diarrhea. There is not a consistent pattern in differences in urban and rural estimates across outcomes and WASH conditions. Comparisons between improved WASH with no contamination and unimproved WASH with contamination are not included due to data sparsity.
+
+
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
+p_rural_pooled_cont
+```
+
+
+__Figure 11.__ Comparison of adjusted anthropometry differences between urban and rural households across country-specific estimates of the relative risk of diarrhea. There is not a consistent pattern in differences in urban and rural estimates across outcomes and WASH conditions. Comparisons between improved WASH with no contamination and unimproved WASH with contamination are not included due to data sparsity.
+
+
+
+

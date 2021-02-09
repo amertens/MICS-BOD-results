@@ -7,8 +7,7 @@ output:
 ---
 
 <!-- output: html_notebook -->
-<!-- editor_options:  -->
-<!--   chunk_output_type: inline -->
+
 
 
 ###To do
@@ -51,25 +50,6 @@ panderOptions('keep.trailing.zeros', TRUE)
 #load figures
 load(here("MICS-WASH-BOD/figures/primary_figure_objects.Rdata"))
 
-# [1] ""        "p_multi_pooled_WQ"        "p_multi_Zscore_pooled_HH" "p_multi_Zscore_pooled_WQ"
-# [5] "p_prim_pooled_HH"         "p_prim_pooled_WQ"         "p_prim_Zscore_pooled_HH"  "p_prim_Zscore_pooled_WQ" 
-
-load(here("MICS-WASH-BOD/figures/PAF_figure_objects.Rdata"))
-#[1] "p_PAF"        "p_pooled_PAF"
-
-load(here("MICS-WASH-BOD/figures/subgroup_figure_objects.Rdata"))
-#"p_rural_pooled_bin"  "p_rural_pooled_cont"
-
-load(here("MICS-WASH-BOD/figures/sensitivity_figure_objects.Rdata"))
-# [5] "p_tmle_comp_diff"        "p_tmle_comp_diff_forest" "p_tmle_comp_RR"          "p_tmle_comp_RR_forest"  
- # [9] "p_unadj_comp_diff"       "p_unadj_comp_RR"
-
-load(here("MICS-WASH-BOD/figures/mult_sensitivity_figure_objects.Rdata"))
-#[1] "p_basic"           "p_multi_pooled_HH_sens" "p_multi_pooled_WQ_sens"
-
-ec_conc_figure <- readRDS(here("MICS-WASH-BOD/figures/ec-conc-figure-object.RDS"))
-
-
 ```
 
 
@@ -78,60 +58,73 @@ ec_conc_figure <- readRDS(here("MICS-WASH-BOD/figures/ec-conc-figure-object.RDS"
 
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3}
+p_prim_pooled_WQ
+```
+
+__Figure 1. Relative risks of measures of source and household water contamination__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. Panels are divided by outcome, with ARI standing for acute respiratory infection. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. For example, households with any level of E. coli contamination were compares to houses with uncontaminated HH water. 
+
+
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3}
 p_prim_pooled_HH
 ```
 
-#Update figure captions
-
-__Figure 1.__ Random-effects pooled relative risks, pooled over the Bangladesh, Zimbabwe, and Pakistan MICS-6 surveys, for the 4 outcomes. Panels are divided by outcome, with ARI standing for acute respiratory infection. The Y axis lists the reference (improved) level of contrast, with the relative risk estimates between the listed reference level and the higher-risk (unimproved) level. For example, households with any level of E. coli contamination were compares to houses with uncontaminated HH water. Among other significant estimates, unimproved hygiene (no water and soap at handwashing station), unimproved sanitation, and unimproved combined WASH was associated with a higher risk of stunting, and unimproved combined WASH was associated with a higher risk of diarrhea. Larger confidence intervals may represent associations estimated less precisely (e.g. for a rarer outcome like ARI) or represent heterogeneity between the country-specific estimates.
+__Figure 2. Relative risks of unimproved WASH conditions__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. For example, households with any level of E. coli contamination were compares to houses with uncontaminated HH water. Among other significant estimates, unimproved hygiene (no water and soap at handwashing station), unimproved sanitation, and unimproved combined WASH was associated with a higher risk of stunting, and unimproved combined WASH was associated with a higher risk of diarrhea, stunting, and mortality. Larger confidence intervals may represent associations estimated less precisely (e.g. for a rarer outcome like ARI) or represent heterogeneity between the country-specific estimates.
 
 
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
+p_multi_pooled_WQ
+```
+
+__Figure 3. Relative risks across degrees of source and household water contamination__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes.  The Y axis lists the level of water contamination, with the relative risk estimates between the reference level of no contamination and the higher-risk levels. 
 
 
-__Figure 2.__ Random-effects pooled relative risks, pooled over the MICS survey countries with water quality measures, across the 4 outcomes for WASH conditions stratified into levels of the Joint Medical Program WASH ladder or by level of E.coli concentration. 
-The row labels list the WASH characteristic and the reference (most improved) level of contrast, and the Y-axis labels are the contrasting higher level of risk.
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
+p_multi_pooled_HH
+```
+
+__Figure 4. Relative risks across levels of household WASH characteristics__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes.  The Y axis lists the level of WASH characteristic, with the relative risk estimates between the printed reference levels and the higher-risk levels. 
+
+
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3}
+p_prim_Zscore_pooled_WQ
+```
+
+__Figure 5.  Anthropometry Z-score differences between contaminated and uncontaminated measures of source and household water__ Random-effects pooled Z-score differences, pooled  over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes. 
+
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3}
+p_prim_Zscore_pooled_HH
+```
+
+__Figure 6.  Anthropometry Z-score differences between unimproved and improved measures of WASH conditions__ Random-effects pooled Z-score differences, pooled  over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes. 
+
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
+p_multi_Zscore_pooled_WQ
+```
+
+__Figure 7.  Anthropometry Z-score differences across degrees of source and household water contamination__ Random-effects pooled Z-score differences, pooled  over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes. 
+
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
+p_multi_Zscore_pooled_HH
+```
+
+__Figure 8.  Anthropometry Z-score differences across levels of household WASH characteristics__ Random-effects pooled Z-score differences, pooled  over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes. 
 
 
 
-__Figure 3.__ Random-effects pooled Z-score differences, pooled  over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes. The Y axis lists the reference (improved) level of contrast, with the relative risk estimates between the listed reference level and the higher-risk (unimproved) level. 
-
-
-
-__Figure 9.__ Country-specific population attributable fractions (PAFs) estimated from adjusted relative risks for the binary outcomes and WASH characterists. PAF's were only estimated for estimated relative risks greater than one. The confidence intervals are bootstrapped, with 100 bootstrap iteractions for the proof-of-concept analysis (the full analysis will use 1000 iterations).
 
 
 
 
 
-## Sensitivity analysis figures
+__Figure 9.__ Country-specific population attributable fractions (PAFs) estimated from adjusted relative risks for the binary outcomes and WASH characterists. PAF's were only estimated for estimated relative risks greater than one. The confidence intervals are bootstrapped, with 100 bootstrap iterations for the presented results (the final analysis will use 1000 iterations).
 
-Note: the sensitivity analyses are based on pooled estimated from binary codings of WASH characteristics for easier comparison between the primary and sensitivity results across the WASH conditions.
+
+#"p_rural_pooled_bin"  "p_rural_pooled_cont"
 
 
 
 
 __Figure S1.__ Comparison of adjusted relative risks between urban and rural households across country-specific estimates of the relative risk of diarrhea. Eighty-one percent of Bangladeshi households are rural, 72% of Pakistani households are rural, and 65% of Zimbabwean households are rural. Missing estimates are from WASH-condition and outcome combinations with rarity in one strata. Relative risks are generally higher in urban populations, though the difference is small or imprecise.
-
-
-__Figure S2.__ Comparison of unadjusted and adjusted relative risks across pooled estimates and binary measures of improved WASH conditions. Unadjusted estimates are generally further from the null, indicating that covariate adjustment is correcting for some confounding between WASH conditions and child health outcomes (likely from socio-economic status as well as other factors).
-
-
-
-
-__Figure S3.__ Comparison of unadjusted and adjusted Z-score differences across pooled estimates and binary measures of improved WASH conditions. Unadjusted estimates are generally further from the null, indicating that covariate adjustment is correcting for some confounding between WASH conditions and child growth.
-
-
-__Figure S4.__ Comparison of random- and fixed-effects pooled relative risks across outcomes and binary measures of improved WASH conditions. Point estimates are very similiar, though random-effects estimates have larger confidence intervals when study-specific estimates are heterogeneous.
-
-
-
-
-
-
-
-
-__Figure S8.__ Comparison of pooled relative risks across outcomes and binary measures of improved WASH conditions, estimated either with GLM and targeted maximum likelihood estimation (TMLE) models, which use ensemble machine learning models in the estimation of relative risks. The TMLE models were estimated using library with simple means, generalized linear models, generalized additive models, penalized regressions, and gradient boosting machines. TMLE estimates are more precise and with different point estimates in certain cases, but were very slow to run, taking 7 days across all exposure-outcome combinations.
-
 
 
 

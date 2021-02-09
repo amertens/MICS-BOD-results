@@ -4,12 +4,19 @@ navbar:
   left:
     - text: "Methods"
       href: methods.html
-    - text: "Primary results"
+    - text: "Primary figures"
       href: primary_results.html
-    - text: "Forest plots"
-      href: supp_forest_plots.html
+    - text: "Population attributable fraction figures"
+      href: paf_results.html
     - text: "Tables"
       href: tables.html
+    - text: "Urban/rural subgroup results"
+      href: subgroup_results.html
+    - text: "Sensitivity results"
+      href: sensitivity_results.html
+    - text: "Forest plots"
+      href: supp_forest_plots.html
+
 output_dir: "."
 output:
   html_document:

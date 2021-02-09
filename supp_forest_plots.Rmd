@@ -3,7 +3,8 @@ title: "Forest plots of country-specific estimates"
 author: "Andrew Mertens"
 output:
   html_document:
-    df_print: paged
+    toc: true  
+    toc_float: true  
 ---
 
 <!-- output: html_notebook -->
@@ -48,11 +49,28 @@ plist <- readRDS(here("MICS-WASH-BOD/figures/forest_figure_objects.rds"))
 _Figure details for all plots:_ Each plot shows country-specific and pooled estimates for each WASH characteristic-outcome combination (printed in each figure title). All estimates are adjusted for potential confounders. Sample size for each estimate are in parentheses. Multi-panel figures compare categories of WASH characteristics (printed at the top of each panel) to the most-improved reference level (printed after `ref=` in the X-axis label). Points are colored by the MICS region, with pooled estimates in black, and labeled as pooled estimates from random effects (RE) or fixed effects (FE) models.
 
 
+## Diarrhea
+
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 5}
-#for(i in 1:4){
-for(i in 1:length(plist)){
+for(i in names(plist)){
+  if(grepl("Diarrhea",i))
   print(plist[[i]])
 }
 
 
 ```
+
+## Anthropometry
+
+#### Stunting
+
+#### Wasting
+
+#### HAZ
+
+#### WHZ
+
+## Acute respiratory infections
+
+## Mortality
+

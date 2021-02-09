@@ -12,7 +12,7 @@
 <meta name="author" content="Andrew Mertens" />
 
 
-<title>Forest plots of country-specific estimates</title>
+<title>Primary figures and tables</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,12 +20,11 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 <style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
@@ -252,69 +251,6 @@ $(document).ready(function () {
 
 
 
-<style type="text/css">
-
-#TOC {
-  margin: 25px 0px 20px 0px;
-}
-@media (max-width: 768px) {
-#TOC {
-  position: relative;
-  width: 100%;
-}
-}
-
-@media print {
-.toc-content {
-  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
-  float: right;
-}
-}
-
-.toc-content {
-  padding-left: 30px;
-  padding-right: 40px;
-}
-
-div.main-container {
-  max-width: 1200px;
-}
-
-div.tocify {
-  width: 20%;
-  max-width: 260px;
-  max-height: 85%;
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  div.tocify {
-    width: 25%;
-  }
-}
-
-@media (max-width: 767px) {
-  div.tocify {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-.tocify ul, .tocify li {
-  line-height: 20px;
-}
-
-.tocify-subheader .tocify-item {
-  font-size: 0.90em;
-}
-
-.tocify .list-group-item {
-  border-radius: 0px;
-}
-
-
-</style>
-
-
 
 </head>
 
@@ -322,16 +258,6 @@ div.tocify {
 
 
 <div class="container-fluid main-container">
-
-
-<!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
-<div class="col-xs-12 col-sm-4 col-md-3">
-<div id="TOC" class="tocify">
-</div>
-</div>
-
-<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -381,46 +307,28 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Forest plots of country-specific estimates</h1>
+<h1 class="title toc-ignore">Primary figures and tables</h1>
 <h4 class="author">Andrew Mertens</h4>
 
 </div>
 
 
 <!-- output: html_notebook -->
-<!-- editor_options:  -->
-<!--   chunk_output_type: inline -->
-<p><em>Figure details for all plots:</em> Each plot shows country-specific and pooled estimates for each WASH characteristic-outcome combination (printed in each figure title). All estimates are adjusted for potential confounders. Sample size for each estimate are in parentheses. Multi-panel figures compare categories of WASH characteristics (printed at the top of each panel) to the most-improved reference level (printed after <code>ref=</code> in the X-axis label). Points are colored by the MICS region, with pooled estimates in black, and labeled as pooled estimates from random effects (RE) or fixed effects (FE) models.</p>
-<div id="diarrhea" class="section level2">
-<h2>Diarrhea</h2>
-<p><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-1.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-2.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-3.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-4.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-5.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-6.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-7.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-8.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-9.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-10.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-11.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-12.png" width="960" /><img src="supp_forest_plots_files/figure-html/unnamed-chunk-1-13.png" width="960" /></p>
-</div>
-<div id="anthropometry" class="section level2">
-<h2>Anthropometry</h2>
-<div id="stunting" class="section level4">
-<h4>Stunting</h4>
-</div>
-<div id="wasting" class="section level4">
-<h4>Wasting</h4>
-</div>
-<div id="haz" class="section level4">
-<h4>HAZ</h4>
-</div>
-<div id="whz" class="section level4">
-<h4>WHZ</h4>
-</div>
-</div>
-<div id="acute-respiratory-infections" class="section level2">
-<h2>Acute respiratory infections</h2>
-</div>
-<div id="mortality" class="section level2">
-<h2>Mortality</h2>
-</div>
+<p>###To do</p>
+<ul>
+<li>Put saved tables after figures</li>
+<li>Adapt figure captions</li>
+<li>Put main interpretations after figures</li>
+<li>Write results section with references to figures</li>
+<li>Write limitation/open questions</li>
+</ul>
+<p><img src="paf_results_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
+<p><strong>Figure 9.</strong> Overall population attributable fractions (PAFs) estimated from adjusted relative risks for the binary outcomes and WASH characteristics. Instead of pooling country-specific PAF’s using random-effects meta-analysis models, population attributable fractions are estimated from a dataset of all included MIC surveys, adjusting for country, due to the method of estimating confidence intervals. The confidence intervals are bootstrapped, with 100 bootstrap iterations for the presented results (the final analysis will use 1000 iterations).</p>
+<p><img src="paf_results_files/figure-html/unnamed-chunk-2-1.png" width="960" /></p>
+<p><strong>Figure S1.</strong> Country-specific population attributable fractions (PAFs) estimated from adjusted relative risks for the binary outcomes and WASH characteristics.</p>
 
 
 
-</div>
-</div>
 
 </div>
 
@@ -453,32 +361,6 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2,h3",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = true;
-    options.smoothScroll = true;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

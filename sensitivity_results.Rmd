@@ -86,15 +86,13 @@ p_tmle_comp_RR
 
 __Figure S4.__ Comparison of pooled relative risks of diarrhea and binary measures of household and source water contamination, estimated either with GLM and targeted maximum likelihood estimation (TMLE) models, which use ensemble machine learning models in the estimation of relative risks. The TMLE models were estimated using library with simple means, generalized linear models, generalized additive models, penalized regressions, and gradient boosting machines. 
 
-### Comparisons of pooled estimates from fixed- versus random-effects models
-
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
 p_tmle_comp_diff
 ```
 
 
-__Figure S5.__ Comparison of pooled HAZ across outcomes and binary measures of improved WASH conditions, estimated either with GLM and targeted maximum likelihood estimation (TMLE) models, which use ensemble machine learning models in the estimation of relative risks. The TMLE models were estimated using library with simple means, generalized linear models, generalized additive models, penalized regressions, and gradient boosting machines. 
+__Figure S5.__ Comparison of pooled HAZ across outcomes and binary measures of improved WASH conditions, estimated either with GLM and targeted maximum likelihood estimation (TMLE) models, which use ensemble machine learning models in the estimation of relative risks. The TMLE models were estimated using library with simple means, generalized linear models, generalized additive models, penalized regressions, and gradient boosting machines. The TMLE estimates are slightly more precise.
 
 
 ### Sensitivity analyses to methods of pooling and coding levels of WASH service
@@ -113,7 +111,7 @@ p_basic
 
 __Figure S7. Relative risks across levels of water and sanitation characteristics with "Basic" coded as the highest level of service__ To assess the effects of sparsity in the "high coverage" sanitation reference level and "continious" water reference level, this figure displays results of a sensitivity analysis combining the "basic" and "high coverage/continious categories" into a "basic" reference category.
 
-### Anthropometry Z-scores across the continuous distribution of E. coli contimination in source and household water
+### Anthropometry Z-scores across the continuous distribution of E. coli contamination in source and household water
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
 ec_conc_figure

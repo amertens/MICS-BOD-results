@@ -62,6 +62,8 @@ _Figure details for all plots:_ Each plot shows country-specific and pooled esti
 
 ## Anthropometry {.tabset .tabset-fade .tabset-pills}
 
+Click on tabs for specific anthropometry outcomes
+
 ### Stunting
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 5}

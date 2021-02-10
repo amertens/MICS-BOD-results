@@ -7,6 +7,10 @@ output:
 ---
 
 
+### Interpretation
+
+No clear pattern of differences between regions across WASH characteristic-outcome combinations, though due to the number of regions, and the different number of countries per region (which contributes to widely different confidence intervals), it is hard to systematically compare results. The interpretation of pooled regional estimates may benefit from dropping regions with few countries from the plots, or a pairwise comparison of regions of interest (for example, sub-Saharan Africa versus South Asia). I am open to suggestions.
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)

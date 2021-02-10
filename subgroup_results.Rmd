@@ -10,7 +10,7 @@ output:
 
 ### Interpretation
 
-XXXXXXXXXXXXXXXXXXXXXXX
+No clear pattern of differences between estimates from rural versus urban households when pooled across all included MICS countries.
 
 
 

@@ -45,7 +45,9 @@ __To do:__
 
 __Discussion points:__  
 
+  #.  Suggestions to better present or interpret the large numbers of results?
   #.  Add subgroup analysis stratifying by the age of the child during outcome measurement?
+  #.  Focus the interpretation of the results on countries with more prevalent low-levels of service?
   
   
 ----

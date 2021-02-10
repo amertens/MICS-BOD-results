@@ -47,6 +47,8 @@ pander(HH_tab, digits=2)
 
 ## WASH characteristics {.tabset}
 
+Click on tabs for specific WASH characteristics
+
 ### Household water E. coli contamination {.tabset}
 
 ```{r, echo=F, warning=F, message=F}
@@ -86,6 +88,8 @@ pander(WASHtab, digits=2)
 
 
 ## Child health outcomes {.tabset}
+
+Click on tabs for specific health outcomes
 
 ### Anthropometry outcomes  {.tabset}
 

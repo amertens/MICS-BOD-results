@@ -51,6 +51,8 @@ $$
   Which are estimates of the percent of cases in the population that could have been prevented if the whole population had their exposure shifted to a lower risk level. For example, using data from all countries, an estimated 10% of diarrhea and 14.5% of stunting could be eliminated by having improved drinking water sourced free of contimination (safely managed).
 
   The 95% confidence intervals (CI's) are percentile-based non-parametric, clustered bootstrap, with cluster resampling with replacement. This is why some confidence intervals are asymmetrical. Due to the computation time, PAF's have currently only been estimated for the diarrhea and stunting outcomes. PAF estimates from having improved WASH free from contamination were not calculated due to data sparsity.
+  
+  __Note:__ The pooled PAF's are calculated using a 1-step procedure, calculating PAF's from a single dataset of all countries, adjusting for country as a fixed covariate alongside other confounders. This was done to calculate bootstrap-based standard errors, but makes the pooled PAF's functionally equivalent to fixed-effect pooled estimates. I will update the analysis to include country as a random effect.
 
 
 
@@ -65,7 +67,7 @@ __Figure 9.__ Overall population attributable fractions (PAFs) estimated from ad
 p_PAF
 ```
 
-__Figure S1.__ Country-specific population attributable fractions (PAFs) estimated from adjusted relative risks for the binary outcomes and WASH characteristics. 
+__Figure 10.__ Country-specific population attributable fractions (PAFs) estimated from adjusted relative risks for the binary outcomes and WASH characteristics. 
 
 
 

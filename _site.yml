@@ -4,7 +4,7 @@ navbar:
   left:
     - text: "Methods"
       href: methods.html
-    - text: "Primary figs"
+    - text: "Primary results"
       href: primary_results.html
     - text: "PAF figs"
       href: paf_results.html

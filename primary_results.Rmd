@@ -1,21 +1,30 @@
 ---
-title: "Primary figures"
+title: "Primary results"
 output:
   html_document:
     toc: true  
     toc_float: true  
 ---
 
-
+__Notes for all plots:__ Crossed points denote significant estimates at an alpha level of 0.05. Reference levels are printed under the X-axis or denoted in the plots. All presented estimates are adjusted for confounder based on the procedure outlined in the methods section. 
 
 
 ### Primary findings
 
+  #. Household and source water contamination is not associated with reduced diarrhea, wasting, or mortality, and water contamination has inconsistent associations with acute respiratory infection and child stunting. The direction of point estimates across degrees of household contamination are consistent with increased risks of diarrhea, stuning, and mortality, though most estimates are not significant.
+
+  #. Improved sanitation, hygiene, and combined WASH is associated with a decreased risk of diarrhea and stunting, and all improved WASH characteristics are associated with a decreased risk of mortality.
+  
+  #. Households with improved combined WASH free from contamination, when compared to households with unimproved water, sanitation, and hygiene with water contamination (the most extreme contrast) was not associated with diarrhea, stunting, wasting, or ARI's (but was associated with mortality), though this analysis suffered from data sparsity in most countries. 
+  
+  #. Children living in homes with very high household and source water contamination had lower HAZ, but not WHZ, compared to childrenliving in homes with no contamination.
 
 ### Limitations
 
+  #. Unmeasured confounding is likely still present, especially when comparing results of improved WASH conditions to null results from RCT's like WASH Benefits and SHINE. There are a limited set of potential confounders to adjust for, and not all potential confounders were adjusted for in the analyses of binary outcomes that suffered from data sparsity.
+  
+  #. Currently, no subdivision of analyses by child age. For example, the effects of contaminated water may impact a breastfeeding child differently from an older child.
 
-### Open questions
 
 
 

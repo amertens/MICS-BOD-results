@@ -1,21 +1,25 @@
 name: "MICS WASH BOD"
 navbar:
-  title: "HOME"
+  title: "Overview"
   left:
     - text: "Methods"
       href: methods.html
-    - text: "Primary figures"
+    - text: "Primary figs"
       href: primary_results.html
-    - text: "PAF figures"
+    - text: "PAF figs"
       href: paf_results.html
     - text: "Tables"
       href: tables.html
-    - text: "Urban/rural subgroup results"
+    - text: "Regional figs"
+      href: regional_results.html
+    - text: "Urban/rural"
       href: subgroup_results.html
-    - text: "Sensitivity results"
+    - text: "Sensitivity figs"
       href: sensitivity_results.html
     - text: "Forest plots"
       href: supp_forest_plots.html
+    - text: "All results"
+      href: full_results.html
 
 output_dir: "."
 output:

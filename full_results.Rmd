@@ -1,0 +1,49 @@
+---
+title: "Searchable table of full results"
+output:
+  html_document:
+    toc: true  
+    toc_float: true  
+---
+
+
+
+```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = TRUE)
+options(warn = -1) 
+library(janitor)
+library(knitr)
+library(here)
+library(table1)
+library(rvest)
+library(DT)
+
+
+source(here("0-config.R"))
+
+
+op = function(x, d=2) sprintf(paste0("%1.",d,"f"), x) 
+ library(pander)
+panderOptions('digits', 2)
+panderOptions('round', 2)
+panderOptions('keep.trailing.zeros', TRUE)
+panderOptions('graph.fontsize', 8)
+
+panderOptions('table.alignment.default', function(df)
+    ifelse(sapply(df, is.numeric), 'right', 'left'))
+panderOptions('table.split.table', Inf)
+panderOptions('big.mark', ",")
+panderOptions('keep.trailing.zeros', TRUE)
+
+d <- readRDS(here("MICS-WASH-BOD/results/pooled_results.rds"))
+d <- d %>% select(analysis:Y, Xlab, ref, contrast, est, ci.lb, ci.ub, n, N, adjusted, subgroup) %>%
+  mutate(est = round(est, 2), 
+         ci.lb = round(ci.lb, 2), 
+         ci.ub = round(ci.ub, 2)) %>%
+  rename(X=Xlab) %>% arrange(adjusted, analysis, region, Y, X, country)
+```
+
+
+```{r, echo=F, warning=F, message=F}
+datatable(d)
+```

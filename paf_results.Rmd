@@ -1,6 +1,5 @@
 ---
 title: "Population attributable fractions"
-author: "Andrew Mertens"
 output:
   html_document:
     df_print: paged
@@ -40,14 +39,18 @@ panderOptions('keep.trailing.zeros', TRUE)
 
 
 #load figures
-
-
 load(here("MICS-WASH-BOD/figures/PAF_figure_objects.Rdata"))
-#[1] "p_PAF"        "p_pooled_PAF"
 
 ```
 
+We calculated population-attributable fractions (PAF):  
+$$ 
+PAF= \frac{p_c \times (RR_{adj}-1)}{RR_{adj}}
+$$
 
+  Which are estimates of the percent of cases in the population that could have been prevented if the whole population had their exposure shifted to a lower risk level. For example, using data from all countries, an estimated 10% of diarrhea and 14.5% of stunting could be eliminated by having improved drinking water sourced free of contimination (safely managed).
+
+  The 95% confidence intervals (CI's) are percentile-based non-parametric, clustered bootstrap, with cluster resampling with replacement. This is why some confidence intervals are asymmetrical. Due to the computation time, PAF's have currently only been estimated for the diarrhea and stunting outcomes. PAF estimates from having improved WASH free from contamination were not calculated due to data sparsity.
 
 
 

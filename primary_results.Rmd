@@ -1,9 +1,9 @@
 ---
 title: "Primary figures"
-author: "Andrew Mertens"
 output:
   html_document:
-    df_print: paged
+    toc: true  
+    toc_float: true  
 ---
 
 
@@ -53,8 +53,8 @@ load(here("MICS-WASH-BOD/figures/primary_figure_objects.Rdata"))
 
 
 
-## Primary figures
 
+### Relative risks between measures of water contamination and binary outcomes
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3}
 p_prim_pooled_WQ
@@ -62,12 +62,15 @@ p_prim_pooled_WQ
 
 __Figure 1. Relative risks of measures of source and household water contamination__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. Panels are divided by outcome, with ARI standing for acute respiratory infection. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. For example, households with any level of E. coli contamination were compares to houses with uncontaminated HH water. 
 
+### Relative risks between unimproved WASH conditions and binary outcomes
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3}
 p_prim_pooled_HH
 ```
 
 __Figure 2. Relative risks of unimproved WASH conditions__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. For example, households with any level of E. coli contamination were compares to houses with uncontaminated HH water. Among other significant estimates, unimproved hygiene (no water and soap at handwashing station), unimproved sanitation, and unimproved combined WASH was associated with a higher risk of stunting, and unimproved combined WASH was associated with a higher risk of diarrhea, stunting, and mortality. Larger confidence intervals may represent associations estimated less precisely (e.g. for a rarer outcome like ARI) or represent heterogeneity between the country-specific estimates.
+
+### Relative risks between levels of water contamination and binary outcomes
 
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
@@ -76,12 +79,16 @@ p_multi_pooled_WQ
 
 __Figure 3. Relative risks across degrees of source and household water contamination__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes.  The Y axis lists the level of water contamination, with the relative risk estimates between the reference level of no contamination and the higher-risk levels. 
 
+### Relative risks between levels of WASH service and binary outcomes
+
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
 p_multi_pooled_HH
 ```
 
 __Figure 4. Relative risks across levels of household WASH characteristics__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes.  The Y axis lists the level of WASH characteristic, with the relative risk estimates between the printed reference levels and the higher-risk levels. 
+
+### Z-score differences between measures of water contamination
 
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3}
@@ -90,17 +97,24 @@ p_prim_Zscore_pooled_WQ
 
 __Figure 5.  Anthropometry Z-score differences between contaminated and uncontaminated measures of source and household water__ Random-effects pooled Z-score differences, pooled  over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes. 
 
+### Z-score differences between unimproved and improved WASH conditions
+
+
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3}
 p_prim_Zscore_pooled_HH
 ```
 
 __Figure 6.  Anthropometry Z-score differences between unimproved and improved measures of WASH conditions__ Random-effects pooled Z-score differences, pooled  over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes. 
 
+### Z-score differences between levels of water contamination 
+
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
 p_multi_Zscore_pooled_WQ
 ```
 
 __Figure 7.  Anthropometry Z-score differences across degrees of source and household water contamination__ Random-effects pooled Z-score differences, pooled  over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes. 
+
+### Z-score differences between levels of WASH service
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
 p_multi_Zscore_pooled_HH
@@ -114,16 +128,6 @@ __Figure 8.  Anthropometry Z-score differences across levels of household WASH c
 
 
 
-
-__Figure 9.__ Country-specific population attributable fractions (PAFs) estimated from adjusted relative risks for the binary outcomes and WASH characterists. PAF's were only estimated for estimated relative risks greater than one. The confidence intervals are bootstrapped, with 100 bootstrap iterations for the presented results (the final analysis will use 1000 iterations).
-
-
-#"p_rural_pooled_bin"  "p_rural_pooled_cont"
-
-
-
-
-__Figure S1.__ Comparison of adjusted relative risks between urban and rural households across country-specific estimates of the relative risk of diarrhea. Eighty-one percent of Bangladeshi households are rural, 72% of Pakistani households are rural, and 65% of Zimbabwean households are rural. Missing estimates are from WASH-condition and outcome combinations with rarity in one strata. Relative risks are generally higher in urban populations, though the difference is small or imprecise.
 
 
 

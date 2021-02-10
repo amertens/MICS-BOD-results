@@ -9,7 +9,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Andrew Mertens" />
 
 
 <title>Sensitivity analysis results</title>
@@ -20,9 +19,10 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 
@@ -234,6 +234,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -241,6 +304,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -253,7 +326,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">HOME</a>
+      <a class="navbar-brand" href="index.html">Overview</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -261,22 +334,28 @@ $(document).ready(function () {
   <a href="methods.html">Methods</a>
 </li>
 <li>
-  <a href="primary_results.html">Primary figures</a>
+  <a href="primary_results.html">Primary figs</a>
 </li>
 <li>
-  <a href="paf_results.html">PAF figures</a>
+  <a href="paf_results.html">PAF figs</a>
 </li>
 <li>
   <a href="tables.html">Tables</a>
 </li>
 <li>
-  <a href="subgroup_results.html">Urban/rural subgroup results</a>
+  <a href="regional_results.html">Regional figs</a>
 </li>
 <li>
-  <a href="sensitivity_results.html">Sensitivity results</a>
+  <a href="subgroup_results.html">Urban/rural</a>
+</li>
+<li>
+  <a href="sensitivity_results.html">Sensitivity figs</a>
 </li>
 <li>
   <a href="supp_forest_plots.html">Forest plots</a>
+</li>
+<li>
+  <a href="full_results.html">All results</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -291,45 +370,50 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Sensitivity analysis results</h1>
-<h4 class="author">Andrew Mertens</h4>
 
 </div>
 
 
-<!-- output: html_notebook -->
-<!-- editor_options:  -->
-<!--   chunk_output_type: inline -->
-<p>###To do</p>
-<ul>
-<li>Put saved tables after figures</li>
-<li>Adapt figure captions</li>
-<li>Put main interpretations after figures</li>
-<li>Write results section with references to figures</li>
-<li>Write limitation/open questions</li>
-</ul>
-<div id="sensitivity-analysis-figures" class="section level2">
-<h2>Sensitivity analysis figures</h2>
-<p>Note: the sensitivity analysis figures are based on pooled estimated from binary codings of WASH characteristics for easier comparison between the primary and sensitivity results across the WASH conditions. Results are available for all WASH codings for all sensiivity analyses unless otherwise noted.</p>
+<p><strong>Note:</strong> the sensitivity analysis figures are based on pooled estimated from binary codings of WASH characteristics for easier comparison between the primary and sensitivity results across the WASH conditions. Results are available for all WASH codings for all sensiivity analyses unless otherwise noted.</p>
+<div id="comparisons-of-unadjusted-and-adjusted-estimates" class="section level3">
+<h3>Comparisons of unadjusted and adjusted estimates</h3>
 <p><img src="sensitivity_results_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
-<p><strong>Figure S2.</strong> Comparison of unadjusted and adjusted relative risks across pooled estimates and binary measures of improved WASH conditions. Unadjusted estimates are generally further from the null, indicating that covariate adjustment is correcting for some confounding between WASH conditions and child health outcomes (likely from socio-economic status as well as other factors).</p>
+<p><strong>Figure S1.</strong> Comparison of unadjusted and adjusted relative risks across pooled estimates and binary measures of improved WASH conditions. Unadjusted estimates are generally further from the null, indicating that covariate adjustment is correcting for some confounding between WASH conditions and child health outcomes (likely from socio-economic status as well as other factors).</p>
 <p><img src="sensitivity_results_files/figure-html/unnamed-chunk-2-1.png" width="960" /></p>
-<p><strong>Figure S3.</strong> Comparison of unadjusted and adjusted Z-score differences across pooled estimates and binary measures of improved WASH conditions. Unadjusted estimates are generally further from the null, indicating that covariate adjustment is correcting for some confounding between WASH conditions and child growth.</p>
+<p><strong>Figure S2.</strong> Comparison of unadjusted and adjusted Z-score differences across pooled estimates and binary measures of improved WASH conditions. Unadjusted estimates are generally further from the null, indicating that covariate adjustment is correcting for some confounding between WASH conditions and child growth.</p>
+</div>
+<div id="comparisons-of-pooled-estimates-from-fixed--versus-random-effects-models" class="section level3">
+<h3>Comparisons of pooled estimates from fixed- versus random-effects models</h3>
 <p><img src="sensitivity_results_files/figure-html/unnamed-chunk-3-1.png" width="960" /></p>
-<p><strong>Figure S4.</strong> Comparison of random- and fixed-effects pooled relative risks across outcomes and binary measures of improved WASH conditions. Point estimates are very similiar, though random-effects estimates have larger confidence intervals when study-specific estimates are heterogeneous.</p>
+<p><strong>Figure S3.</strong> Comparison of random- and fixed-effects pooled relative risks across outcomes and binary measures of improved WASH conditions. Point estimates are very similiar, though random-effects estimates have larger confidence intervals when study-specific estimates are heterogeneous.</p>
+</div>
+<div id="comparisons-of-estimates-from-modified-poisson-regression-models-versus-targeted-maximun-likelihood-estimation-models" class="section level3">
+<h3>Comparisons of estimates from modified poisson regression models versus targeted maximun likelihood estimation models</h3>
 <p><img src="sensitivity_results_files/figure-html/unnamed-chunk-4-1.png" width="960" /></p>
-<p><strong>Figure S5.</strong> Comparison of pooled relative risks of diarrhea and binary measures of household and source water contamination, estimated either with GLM and targeted maximum likelihood estimation (TMLE) models, which use ensemble machine learning models in the estimation of relative risks. The TMLE models were estimated using library with simple means, generalized linear models, generalized additive models, penalized regressions, and gradient boosting machines.</p>
+<p><strong>Figure S4.</strong> Comparison of pooled relative risks of diarrhea and binary measures of household and source water contamination, estimated either with GLM and targeted maximum likelihood estimation (TMLE) models, which use ensemble machine learning models in the estimation of relative risks. The TMLE models were estimated using library with simple means, generalized linear models, generalized additive models, penalized regressions, and gradient boosting machines.</p>
+</div>
+<div id="comparisons-of-pooled-estimates-from-fixed--versus-random-effects-models-1" class="section level3">
+<h3>Comparisons of pooled estimates from fixed- versus random-effects models</h3>
 <p><img src="sensitivity_results_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
-<p><strong>Figure S6.</strong> Comparison of pooled HAZ across outcomes and binary measures of improved WASH conditions, estimated either with GLM and targeted maximum likelihood estimation (TMLE) models, which use ensemble machine learning models in the estimation of relative risks. The TMLE models were estimated using library with simple means, generalized linear models, generalized additive models, penalized regressions, and gradient boosting machines.</p>
+<p><strong>Figure S5.</strong> Comparison of pooled HAZ across outcomes and binary measures of improved WASH conditions, estimated either with GLM and targeted maximum likelihood estimation (TMLE) models, which use ensemble machine learning models in the estimation of relative risks. The TMLE models were estimated using library with simple means, generalized linear models, generalized additive models, penalized regressions, and gradient boosting machines.</p>
+</div>
+<div id="sensitivity-analyses-to-methods-of-pooling-and-coding-levels-of-wash-service" class="section level3">
+<h3>Sensitivity analyses to methods of pooling and coding levels of WASH service</h3>
 <p><img src="sensitivity_results_files/figure-html/unnamed-chunk-6-1.png" width="960" /></p>
-<p><strong>Figure S7. Relative risks across levels of household WASH characteristics, only including surveys with all levels of WASH characteristics</strong> The figure displays results similar to Figure 4, but only pooling estimates from surveys with sufficient observations in each level to estimate relative risks between the reference level and all contrasts.</p>
+<p><strong>Figure S6. Relative risks across levels of household WASH characteristics, only including surveys with all levels of WASH characteristics</strong> The figure displays results similar to Figure 4, but only pooling estimates from surveys with sufficient observations in each level to estimate relative risks between the reference level and all contrasts.</p>
 <p><img src="sensitivity_results_files/figure-html/unnamed-chunk-7-1.png" width="960" /></p>
-<p><strong>Figure S8. Relative risks across levels of water and sanitation characteristics with “Basic” coded as the highest level of service</strong> To assess the effects of sparsity in the “high coverage” sanitation reference level and “continious” water reference level, this figure displays results of a sensitivity analysis combining the “basic” and “high coverage/continious categories” into a “basic” reference category/</p>
+<p><strong>Figure S7. Relative risks across levels of water and sanitation characteristics with “Basic” coded as the highest level of service</strong> To assess the effects of sparsity in the “high coverage” sanitation reference level and “continious” water reference level, this figure displays results of a sensitivity analysis combining the “basic” and “high coverage/continious categories” into a “basic” reference category.</p>
+</div>
+<div id="anthropometry-z-scores-across-the-continuous-distribution-of-e.-coli-contimination-in-source-and-household-water" class="section level3">
+<h3>Anthropometry Z-scores across the continuous distribution of E. coli contimination in source and household water</h3>
 <p><img src="sensitivity_results_files/figure-html/unnamed-chunk-8-1.png" width="960" /></p>
-<p><strong>Figure S9.</strong> Curves between E. coli concentrations in source and household drinking water and child anthropometry Z-scores. Curves were estimated using generalized additive models fit to all the included MICS data.</p>
+<p><strong>Figure S8.</strong> Curves between E. coli concentrations in source and household drinking water and child anthropometry Z-scores. Curves were estimated using generalized additive models fit to all the included MICS data.</p>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -362,6 +446,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

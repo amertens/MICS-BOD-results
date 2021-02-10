@@ -9,7 +9,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Andrew Mertens" />
 
 
 <title>Primary figures</title>
@@ -20,9 +19,10 @@
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
-<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 
 
@@ -234,6 +234,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -241,6 +304,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -253,7 +326,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">HOME</a>
+      <a class="navbar-brand" href="index.html">Overview</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -261,22 +334,28 @@ $(document).ready(function () {
   <a href="methods.html">Methods</a>
 </li>
 <li>
-  <a href="primary_results.html">Primary figures</a>
+  <a href="primary_results.html">Primary figs</a>
 </li>
 <li>
-  <a href="paf_results.html">PAF figures</a>
+  <a href="paf_results.html">PAF figs</a>
 </li>
 <li>
   <a href="tables.html">Tables</a>
 </li>
 <li>
-  <a href="subgroup_results.html">Urban/rural subgroup results</a>
+  <a href="regional_results.html">Regional figs</a>
 </li>
 <li>
-  <a href="sensitivity_results.html">Sensitivity results</a>
+  <a href="subgroup_results.html">Urban/rural</a>
+</li>
+<li>
+  <a href="sensitivity_results.html">Sensitivity figs</a>
 </li>
 <li>
   <a href="supp_forest_plots.html">Forest plots</a>
+</li>
+<li>
+  <a href="full_results.html">All results</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -291,7 +370,6 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Primary figures</h1>
-<h4 class="author">Andrew Mertens</h4>
 
 </div>
 
@@ -305,31 +383,51 @@ $(document).ready(function () {
 <div id="open-questions" class="section level3">
 <h3>Open questions</h3>
 </div>
-<div id="primary-figures" class="section level2">
-<h2>Primary figures</h2>
+<div id="relative-risks-between-measures-of-water-contamination-and-binary-outcomes" class="section level3">
+<h3>Relative risks between measures of water contamination and binary outcomes</h3>
 <p><img src="primary_results_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
 <p><strong>Figure 1. Relative risks of measures of source and household water contamination</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. Panels are divided by outcome, with ARI standing for acute respiratory infection. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. For example, households with any level of E. coli contamination were compares to houses with uncontaminated HH water.</p>
+</div>
+<div id="relative-risks-between-unimproved-wash-conditions-and-binary-outcomes" class="section level3">
+<h3>Relative risks between unimproved WASH conditions and binary outcomes</h3>
 <p><img src="primary_results_files/figure-html/unnamed-chunk-2-1.png" width="960" /></p>
 <p><strong>Figure 2. Relative risks of unimproved WASH conditions</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. For example, households with any level of E. coli contamination were compares to houses with uncontaminated HH water. Among other significant estimates, unimproved hygiene (no water and soap at handwashing station), unimproved sanitation, and unimproved combined WASH was associated with a higher risk of stunting, and unimproved combined WASH was associated with a higher risk of diarrhea, stunting, and mortality. Larger confidence intervals may represent associations estimated less precisely (e.g. for a rarer outcome like ARI) or represent heterogeneity between the country-specific estimates.</p>
+</div>
+<div id="relative-risks-between-levels-of-water-contamination-and-binary-outcomes" class="section level3">
+<h3>Relative risks between levels of water contamination and binary outcomes</h3>
 <p><img src="primary_results_files/figure-html/unnamed-chunk-3-1.png" width="960" /></p>
 <p><strong>Figure 3. Relative risks across degrees of source and household water contamination</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. The Y axis lists the level of water contamination, with the relative risk estimates between the reference level of no contamination and the higher-risk levels.</p>
+</div>
+<div id="relative-risks-between-levels-of-wash-service-and-binary-outcomes" class="section level3">
+<h3>Relative risks between levels of WASH service and binary outcomes</h3>
 <p><img src="primary_results_files/figure-html/unnamed-chunk-4-1.png" width="960" /></p>
 <p><strong>Figure 4. Relative risks across levels of household WASH characteristics</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. The Y axis lists the level of WASH characteristic, with the relative risk estimates between the printed reference levels and the higher-risk levels.</p>
+</div>
+<div id="z-score-differences-between-measures-of-water-contamination" class="section level3">
+<h3>Z-score differences between measures of water contamination</h3>
 <p><img src="primary_results_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
 <p><strong>Figure 5. Anthropometry Z-score differences between contaminated and uncontaminated measures of source and household water</strong> Random-effects pooled Z-score differences, pooled over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes.</p>
+</div>
+<div id="z-score-differences-between-unimproved-and-improved-wash-conditions" class="section level3">
+<h3>Z-score differences between unimproved and improved WASH conditions</h3>
 <p><img src="primary_results_files/figure-html/unnamed-chunk-6-1.png" width="960" /></p>
 <p><strong>Figure 6. Anthropometry Z-score differences between unimproved and improved measures of WASH conditions</strong> Random-effects pooled Z-score differences, pooled over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes.</p>
+</div>
+<div id="z-score-differences-between-levels-of-water-contamination" class="section level3">
+<h3>Z-score differences between levels of water contamination</h3>
 <p><img src="primary_results_files/figure-html/unnamed-chunk-7-1.png" width="960" /></p>
 <p><strong>Figure 7. Anthropometry Z-score differences across degrees of source and household water contamination</strong> Random-effects pooled Z-score differences, pooled over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes.</p>
+</div>
+<div id="z-score-differences-between-levels-of-wash-service" class="section level3">
+<h3>Z-score differences between levels of WASH service</h3>
 <p><img src="primary_results_files/figure-html/unnamed-chunk-8-1.png" width="960" /></p>
 <p><strong>Figure 8. Anthropometry Z-score differences across levels of household WASH characteristics</strong> Random-effects pooled Z-score differences, pooled over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes.</p>
-<p><strong>Figure 9.</strong> Country-specific population attributable fractions (PAFs) estimated from adjusted relative risks for the binary outcomes and WASH characterists. PAF’s were only estimated for estimated relative risks greater than one. The confidence intervals are bootstrapped, with 100 bootstrap iterations for the presented results (the final analysis will use 1000 iterations).</p>
-<p>#“p_rural_pooled_bin” “p_rural_pooled_cont”</p>
-<p><strong>Figure S1.</strong> Comparison of adjusted relative risks between urban and rural households across country-specific estimates of the relative risk of diarrhea. Eighty-one percent of Bangladeshi households are rural, 72% of Pakistani households are rural, and 65% of Zimbabwean households are rural. Missing estimates are from WASH-condition and outcome combinations with rarity in one strata. Relative risks are generally higher in urban populations, though the difference is small or imprecise.</p>
 </div>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -362,6 +460,32 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

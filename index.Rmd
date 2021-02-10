@@ -9,7 +9,7 @@ output:
 
 ----
 
-**Background**  
+### Background  
 
   Diarrheal disease causes over a million deaths each year and is a leading cause of child mortality. Inadequate drinking water, sanitation, and hygiene (WASH) are important risk factors for diarrheal disease, particularly in low- or middle- income countries (LMIC).^3^  Diarrheal disease from inadequate WASH conditions was estimated to cause 829,000 deaths in 2016, including 5.3% of deaths (297,000) in children under 5 years old.^4^ In particular, inadequate water was estimated to cause 484,741 deaths from diarrheal disease.^4^ In addition to increasing the risk of diarrheal disease, poor WASH conditions are associated with acute respiratory infections, poor child growth, and increased mortality.^4^  
   
@@ -18,7 +18,7 @@ output:
   
   Where possible, risk factor-attributable burden of disease estimates are based on randomized or matched control trials or prospective cohorts,^3^ which are currently not available to estimate the effect of continuous, high quality piped water across a range of contexts, and are not necessarily representative samples. Historical experience in the WASH field,^9^ combined with null results of recent trials intervening to provide more basic levels of services, indicates that providing higher service levels is a public health policy imperative, and more robust evidence would help support the case for investment. Due to these limitations in the WASH epidemiologic literature regarding transitions to higher levels of service we propose alternative estimation methods that use new observational, nationally-representative cross-sectional surveys that include water quality data. The WHO/UNICEF Joint Monitoring Programme for Water Supply, Sanitation, and Hygiene (JMP) draws upon household surveys, censuses, and administrative data on WASH to produce SDG reports. Since 2012, the JMP team has worked with the UNICEF team that manages the Multiple Indicator Cluster Surveys (MICS) programme to develop a module for testing water quality in household surveys and produce data on E. coli concentrations in drinking water. The module has now been implemented in over 30 surveys from countries with a range of WASH contexts, and these survey data can be used to identify both what types of water supplies are used (e.g. piped water, other improved sources such as protected groundwater, unimproved sources, and surface water) and the degree to which these water supplies are contaminated with faecal indicator bacteria.^10^ We used these MICS datasets to estimate the change in risk of diarrheal disease and other child health outcomes as populations move from lower levels of drinking water to safely managed water, as well as estimate the change in risk in moving to improved sanitation, improved hygiene, and the combination of water, sanitation, and hygiene. Following recommendations from prior WASH burden of disease research, we estimated the population attributable risks and fractions of poor WASH conditions.^11^
 
-**Objectives**  
+### Objectives 
 
 1.  Estimate the relative risk of diarrheal disease within populations of MICS survey countries between levels of water, sanitation, and hygiene service ladders, including between contaminated and uncontaminated water.^12^
 2.  Estimate the population risks and fractions of diarrheal disease attributable to different tiers of the WASH service ladders, the number, and proportion of cases of diarrhea that could have been prevented if all households in a population had improved to higher levels of WASH conditions.
@@ -26,29 +26,32 @@ output:
 4.  Examine unmeasured confounding in relative risk estimates from MICS data by comparing them to the relative risks from existing meta-analyses of randomized trials.
 5.  Repeat the above objectives for secondary outcomes of respiratory infections and child anthropometry measurements.
 
-**Notes on current status of analysis:**  
+### Notes on current status of analysis: 
 
-Completed:  
+__Completed:__  
 
   #. Primary results
-  #. TMLE and PAF estimates for diarrhea and stunting outcomes 
-  #. Sensitivity analyses: 
+  #. Targeted maximum likelihood estimates (TMLE) and PAF estimates for diarrhea and stunting outcomes 
+  #. Sensitivity analyses: TMLE estimates, fixed effects pooling, regional pooling, unadjusted analyses
 
 
-To do:  
+__To do:__  
 
-  #.  Finish cross-checking prevalence of levels of WASH conditions against MICS reports. I have done this for a subset of countries, but some countries have variables with different names or codings and/or non-English language primary reports.
+  #.  Finish cross-checking prevalence of levels of WASH conditions and key covariates against MICS reports. I have done this for a subset of countries, but some countries have variables with different names or codings and/or non-English language primary reports, and I would like to do a third pass to make sure there aren't any country-specific merge errors or country-specific idiosyncrasies in variable codings.
+  #. TMLE and PAF estimates for other outcomes 
   #. Stochastic intervention analysis
-  #. Imputation of E. coli concentrations
-  #. Estimate PAF's for all outcomes
-  #. Sensitivity analyses: 
+  #. Imputation of E. coli concentrations from households without estimates
+  #. Sensitivity analyses: one-step hierarchical models for pooling, complete case analyses,
 
+__Discussion points:__  
 
-
+  #.  Add subgroup analysis stratifying by the age of the child during outcome measurement?
+  
+  
 ----
 
 
-**References:**
+### References
 
 1.	GBD 2015 Mortality and Causes of Death Collaborators. Global, regional, and national life expectancy, all-cause mortality, and cause-specific mortality for 249 causes of death, 1980-2015: a systematic analysis for the Global Burden of Disease Study 2015. Lancet Lond. Engl. 388, 1459–1544 (2016).
 2.	WHO | Disease burden and mortality estimates. WHO http://www.who.int/healthinfo/global_burden_disease/estimates/en/.

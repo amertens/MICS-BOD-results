@@ -9,7 +9,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Andrew Mertens" />
 
 
 <title>Population attributable fractions</title>
@@ -253,7 +252,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">HOME</a>
+      <a class="navbar-brand" href="index.html">Overview</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -261,22 +260,28 @@ $(document).ready(function () {
   <a href="methods.html">Methods</a>
 </li>
 <li>
-  <a href="primary_results.html">Primary figures</a>
+  <a href="primary_results.html">Primary figs</a>
 </li>
 <li>
-  <a href="paf_results.html">PAF figures</a>
+  <a href="paf_results.html">PAF figs</a>
 </li>
 <li>
   <a href="tables.html">Tables</a>
 </li>
 <li>
-  <a href="subgroup_results.html">Urban/rural subgroup results</a>
+  <a href="regional_results.html">Regional figs</a>
 </li>
 <li>
-  <a href="sensitivity_results.html">Sensitivity results</a>
+  <a href="subgroup_results.html">Urban/rural</a>
+</li>
+<li>
+  <a href="sensitivity_results.html">Sensitivity figs</a>
 </li>
 <li>
   <a href="supp_forest_plots.html">Forest plots</a>
+</li>
+<li>
+  <a href="full_results.html">All results</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -291,12 +296,17 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Population attributable fractions</h1>
-<h4 class="author">Andrew Mertens</h4>
 
 </div>
 
 
 <!-- output: html_notebook -->
+<p>We calculated population-attributable fractions (PAF):<br />
+<span class="math display">\[ 
+PAF= \frac{p_c \times (RR_{adj}-1)}{RR_{adj}}
+\]</span></p>
+<p>Which are estimates of the percent of cases in the population that could have been prevented if the whole population had their exposure shifted to a lower risk level. For example, using data from all countries, an estimated 10% of diarrhea and 14.5% of stunting could be eliminated by having improved drinking water sourced free of contimination (safely managed).</p>
+<p>The 95% confidence intervals (CI’s) are percentile-based non-parametric, clustered bootstrap, with cluster resampling with replacement. This is why some confidence intervals are asymmetrical. Due to the computation time, PAF’s have currently only been estimated for the diarrhea and stunting outcomes. PAF estimates from having improved WASH free from contamination were not calculated due to data sparsity.</p>
 <p><img src="paf_results_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
 <p><strong>Figure 9.</strong> Overall population attributable fractions (PAFs) estimated from adjusted relative risks for the binary outcomes and WASH characteristics. Instead of pooling country-specific PAF’s using random-effects meta-analysis models, population attributable fractions are estimated from a dataset of all included MIC surveys, adjusting for country, due to the method of estimating confidence intervals. The confidence intervals are bootstrapped, with 100 bootstrap iterations for the presented results (the final analysis will use 1000 iterations).</p>
 <p><img src="paf_results_files/figure-html/unnamed-chunk-2-1.png" width="960" /></p>

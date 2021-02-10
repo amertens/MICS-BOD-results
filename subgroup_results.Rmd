@@ -1,12 +1,10 @@
 ---
 title: "Estimates stratified by urban/rural household location"
-author: "Andrew Mertens"
 output:
   html_document:
     df_print: paged
 ---
 
-<!-- output: html_notebook -->
 
 
 

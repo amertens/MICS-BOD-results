@@ -1,15 +1,10 @@
 ---
 title: "Forest plots of country-specific estimates"
-author: "Andrew Mertens"
 output:
   html_document:
     toc: true  
     toc_float: true  
 ---
-
-<!-- output: html_notebook -->
-<!-- editor_options:  -->
-<!--   chunk_output_type: inline -->
 
 
 

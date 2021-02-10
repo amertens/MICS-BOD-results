@@ -327,7 +327,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">HOME</a>
+      <a class="navbar-brand" href="index.html">Overview</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -335,22 +335,28 @@ div.tocify {
   <a href="methods.html">Methods</a>
 </li>
 <li>
-  <a href="primary_results.html">Primary figures</a>
+  <a href="primary_results.html">Primary figs</a>
 </li>
 <li>
-  <a href="paf_results.html">PAF figures</a>
+  <a href="paf_results.html">PAF figs</a>
 </li>
 <li>
   <a href="tables.html">Tables</a>
 </li>
 <li>
-  <a href="subgroup_results.html">Urban/rural subgroup results</a>
+  <a href="regional_results.html">Regional figs</a>
 </li>
 <li>
-  <a href="sensitivity_results.html">Sensitivity results</a>
+  <a href="subgroup_results.html">Urban/rural</a>
+</li>
+<li>
+  <a href="sensitivity_results.html">Sensitivity figs</a>
 </li>
 <li>
   <a href="supp_forest_plots.html">Forest plots</a>
+</li>
+<li>
+  <a href="full_results.html">All results</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -371,11 +377,14 @@ div.tocify {
 
 
 <hr />
-<p><strong>Background</strong></p>
+<div id="background" class="section level3">
+<h3>Background</h3>
 <p>Diarrheal disease causes over a million deaths each year and is a leading cause of child mortality. Inadequate drinking water, sanitation, and hygiene (WASH) are important risk factors for diarrheal disease, particularly in low- or middle- income countries (LMIC).<sup>3</sup> Diarrheal disease from inadequate WASH conditions was estimated to cause 829,000 deaths in 2016, including 5.3% of deaths (297,000) in children under 5 years old.<sup>4</sup> In particular, inadequate water was estimated to cause 484,741 deaths from diarrheal disease.<sup>4</sup> In addition to increasing the risk of diarrheal disease, poor WASH conditions are associated with acute respiratory infections, poor child growth, and increased mortality.<sup>4</sup></p>
 <p>The WASH-attributable burden of disease estimates of the WHO for the year 2016 used access to point-of-use water treatment and safe water storage as the low-risk drinking-water reference level, rather than using access to continuous, high quality piped water.<sup>4</sup> This choice was due to a lack of high-quality studies estimating the decrease in risk of improving water quality through the better operation of piped water systems in LMICs.<sup>5</sup> However, studies from Puerto Rico and Egypt that compare uncontaminated or continuous piped water with contaminated or intermittent piped water supply find that having a high quality piped water supply was associated with a significantly decreased risk of child diarrhea,<sup>6,7</sup> though a study from India only found an effect of continuous piped water on child diarrhea in low-income households.<sup>8</sup></p>
 <p>Where possible, risk factor-attributable burden of disease estimates are based on randomized or matched control trials or prospective cohorts,<sup>3</sup> which are currently not available to estimate the effect of continuous, high quality piped water across a range of contexts, and are not necessarily representative samples. Historical experience in the WASH field,<sup>9</sup> combined with null results of recent trials intervening to provide more basic levels of services, indicates that providing higher service levels is a public health policy imperative, and more robust evidence would help support the case for investment. Due to these limitations in the WASH epidemiologic literature regarding transitions to higher levels of service we propose alternative estimation methods that use new observational, nationally-representative cross-sectional surveys that include water quality data. The WHO/UNICEF Joint Monitoring Programme for Water Supply, Sanitation, and Hygiene (JMP) draws upon household surveys, censuses, and administrative data on WASH to produce SDG reports. Since 2012, the JMP team has worked with the UNICEF team that manages the Multiple Indicator Cluster Surveys (MICS) programme to develop a module for testing water quality in household surveys and produce data on E. coli concentrations in drinking water. The module has now been implemented in over 30 surveys from countries with a range of WASH contexts, and these survey data can be used to identify both what types of water supplies are used (e.g. piped water, other improved sources such as protected groundwater, unimproved sources, and surface water) and the degree to which these water supplies are contaminated with faecal indicator bacteria.<sup>10</sup> We used these MICS datasets to estimate the change in risk of diarrheal disease and other child health outcomes as populations move from lower levels of drinking water to safely managed water, as well as estimate the change in risk in moving to improved sanitation, improved hygiene, and the combination of water, sanitation, and hygiene. Following recommendations from prior WASH burden of disease research, we estimated the population attributable risks and fractions of poor WASH conditions.<sup>11</sup></p>
-<p><strong>Objectives</strong></p>
+</div>
+<div id="objectives" class="section level3">
+<h3>Objectives</h3>
 <ol style="list-style-type: decimal">
 <li>Estimate the relative risk of diarrheal disease within populations of MICS survey countries between levels of water, sanitation, and hygiene service ladders, including between contaminated and uncontaminated water.<sup>12</sup></li>
 <li>Estimate the population risks and fractions of diarrheal disease attributable to different tiers of the WASH service ladders, the number, and proportion of cases of diarrhea that could have been prevented if all households in a population had improved to higher levels of WASH conditions.</li>
@@ -383,23 +392,31 @@ div.tocify {
 <li>Examine unmeasured confounding in relative risk estimates from MICS data by comparing them to the relative risks from existing meta-analyses of randomized trials.</li>
 <li>Repeat the above objectives for secondary outcomes of respiratory infections and child anthropometry measurements.</li>
 </ol>
-<p><strong>Notes on current status of analysis:</strong></p>
-<p>Completed:</p>
+</div>
+<div id="notes-on-current-status-of-analysis" class="section level3">
+<h3>Notes on current status of analysis:</h3>
+<p><strong>Completed:</strong></p>
 <ol>
 <li>Primary results</li>
-<li>TMLE and PAF estimates for diarrhea and stunting outcomes</li>
-<li>Sensitivity analyses:</li>
+<li>Targeted maximum likelihood estimates (TMLE) and PAF estimates for diarrhea and stunting outcomes</li>
+<li>Sensitivity analyses: TMLE estimates, fixed effects pooling, regional pooling, unadjusted analyses</li>
 </ol>
-<p>To do:</p>
+<p><strong>To do:</strong></p>
 <ol>
-<li>Finish cross-checking prevalence of levels of WASH conditions against MICS reports. I have done this for a subset of countries, but some countries have variables with different names or codings and/or non-English language primary reports.</li>
+<li>Finish cross-checking prevalence of levels of WASH conditions and key covariates against MICS reports. I have done this for a subset of countries, but some countries have variables with different names or codings and/or non-English language primary reports, and I would like to do a third pass to make sure there aren’t any country-specific merge errors or country-specific idiosyncrasies in variable codings.</li>
+<li>TMLE and PAF estimates for other outcomes</li>
 <li>Stochastic intervention analysis</li>
-<li>Imputation of E. coli concentrations</li>
-<li>Estimate PAF’s for all outcomes</li>
-<li>Sensitivity analyses:</li>
+<li>Imputation of E. coli concentrations from households without estimates</li>
+<li>Sensitivity analyses: one-step hierarchical models for pooling, complete case analyses,</li>
+</ol>
+<p><strong>Discussion points:</strong></p>
+<ol>
+<li>Add subgroup analysis stratifying by the age of the child during outcome measurement?</li>
 </ol>
 <hr />
-<p><strong>References:</strong></p>
+</div>
+<div id="references" class="section level3">
+<h3>References</h3>
 <ol style="list-style-type: decimal">
 <li>GBD 2015 Mortality and Causes of Death Collaborators. Global, regional, and national life expectancy, all-cause mortality, and cause-specific mortality for 249 causes of death, 1980-2015: a systematic analysis for the Global Burden of Disease Study 2015. Lancet Lond. Engl. 388, 1459–1544 (2016).</li>
 <li>WHO | Disease burden and mortality estimates. WHO <a href="http://www.who.int/healthinfo/global_burden_disease/estimates/en/" class="uri">http://www.who.int/healthinfo/global_burden_disease/estimates/en/</a>.</li>
@@ -422,6 +439,7 @@ div.tocify {
 <li>Hedges, L. V. &amp; Vevea, J. L. Fixed- and random-effects models in meta-analysis. Psychol. Methods 3, 486–504 (1998).</li>
 <li>Chen, Q. et al. Too Many Covariates and Too Few Cases? – A Comparative Study. Stat. Med. 35, 4546–4558 (2016).</li>
 </ol>
+</div>
 
 
 

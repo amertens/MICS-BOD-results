@@ -1,5 +1,5 @@
 ---
-title: "Primary figures"
+title: "Regionally pooled estimates"
 output:
   html_document:
     toc: true  

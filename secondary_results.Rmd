@@ -2,11 +2,35 @@
 title: "Secondary results"
 output:
   html_document:
-  toc: true  
-toc_float: true  
+    toc: true  
+    toc_float: true  
 ---
   
-  __Notes for all plots:__ Crossed points denote significant estimates at an alpha level of 0.05. Reference levels are printed under the X-axis or denoted in the plots. All presented estimates are adjusted for confounder based on the procedure outlined in the methods section. 
+  __Notes for all plots:__ Crossed points denote significant estimates at an alpha level of 0.05. Reference levels are printed under the X-axis or denoted in the plots. All presented estimates are adjusted for confounder based on the procedure outlined in the methods section. Secondary contrasts are as follows:
+ 
+ 
+__Water:__
+
+  1.  Improved, not on premise versus unimproved source (unimproved and surface together)
+  2.  Improved on premise versus Improved, not on premise
+  3.  Improved, on premise, high water quality versus Improved, on premise, not HQ water
+  4.  Improved, on premise, sufficient water versus improved on premise, non-sufficient
+  5.  Improved, on premise, HQ water plus sufficient water versus improved, on premise, not HQ water and non-sufficient
+
+__Sanitation:__
+
+  1.  
+  
+      #.  Unimproved (no facility, unimproved and limited combined) (baseline)
+      #.  Basic, non-sewer
+      #.  Basic connected to sewer  
+      
+  2.  
+      #.  Unimproved (no facility, unimproved and limited combined) (baseline)
+      #.  Basic (<75% coverage)
+      #.  Basic (≥75% coverage)  
+      
+  
 
 
 
@@ -48,30 +72,30 @@ plist <- readRDS(here("MICS-WASH-BOD/figures/forest_figure_objects.rds"))
 
 
 
-### Relative risks between levels of drinking water access and diarrheal disease
+### Relative risks between levels of drinking water access and binary outcomes
 
-```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3}
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
 p_sec_pooled
 
 ```
 
 
-__Figure 11. Relative risks between levels of drinking water access conditions__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for child diarrheal disease. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. Note less studies are used to estimate the contrasts including water quality measurements due to sparse data.
+__Figure 11. Relative risks between levels of drinking water access conditions__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for child diarrheal disease, stunting, wasting, and acute respiratory infections (ARI). The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. Note that less studies are used to estimate the contrasts including water quality measurements due to sparse data.
 
-### Relative risks between levels of sanitation access and diarrheal disease
+### Relative risks between levels of sanitation access and binary outcomes
 
 
 ```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
 p_sec_multi_pooled
 ```
 
-__Figure 12. Relative risks across levels of household sanitation__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes.  The Y axis lists the type and level of sanitation characteristic, with the relative risk estimates between the printed reference levels and the higher-risk levels. 
+__Figure 12. Relative risks across levels of household sanitation__ Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for child diarrheal disease, stunting, wasting, and acute respiratory infections (ARI).  The Y axis lists the type and level of sanitation characteristic, with the relative risk estimates between the printed reference levels and the higher-risk levels. 
 
 
 
 ### Forest plots of levels of water access and relative risks of diarrheal disease
 
-```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 4.5}
 
  plist$Diarrhea.imp_off_prem_V_unimp
  plist$Diarrhea.imp_on_prem_V_imp_off_prem
@@ -82,7 +106,7 @@ __Figure 12. Relative risks across levels of household sanitation__ Random-effec
 
 ### Forest plots of levels of sanitation access and relative risks of diarrheal disease
 
-```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 3.5}
+```{r, echo=F, warning=F, message=F, fig.width = 10, fig.height = 4.5}
 
 plist$Diarrhea.Piped_san_cat
  plist$Diarrhea.san_coverage

@@ -15,29 +15,15 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -102,33 +88,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 51px;
+  padding-top: 61px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 66px;
+  margin-top: -66px;
 }
 .dropdown-submenu {
   position: relative;
@@ -261,9 +247,6 @@ $(document).ready(function () {
 }
 
 @media print {
-#TOC {
-  display: none !important;
-}
 .toc-content {
   /* see https://github.com/w3c/csswg-drafts/issues/4434 */
   float: right;
@@ -310,12 +293,6 @@ div.tocify {
   border-radius: 0px;
 }
 
-.tocify-subheader {
-  display: inline;
-}
-.tocify-subheader .tocify-item {
-  font-size: 0.95em;
-}
 
 </style>
 
@@ -357,10 +334,10 @@ div.tocify {
   <a href="methods.html">Methods</a>
 </li>
 <li>
-  <a href="primary_results.html">Primary results</a>
+  <a href="primary_results.html">Primary figs</a>
 </li>
 <li>
-  <a href="secondary_results.html">Secondary results</a>
+  <a href="secondary_results.html">Secondary figs</a>
 </li>
 <li>
   <a href="paf_results.html">PAF figs</a>
@@ -400,16 +377,37 @@ div.tocify {
 </div>
 
 
-<p><strong>Notes for all plots:</strong> Crossed points denote significant estimates at an alpha level of 0.05. Reference levels are printed under the X-axis or denoted in the plots. All presented estimates are adjusted for confounder based on the procedure outlined in the methods section.</p>
-<div id="relative-risks-between-levels-of-drinking-water-access-and-diarrheal-disease" class="section level3">
-<h3>Relative risks between levels of drinking water access and diarrheal disease</h3>
+<p><strong>Notes for all plots:</strong> Crossed points denote significant estimates at an alpha level of 0.05. Reference levels are printed under the X-axis or denoted in the plots. All presented estimates are adjusted for confounder based on the procedure outlined in the methods section. Secondary contrasts are as follows:</p>
+<p><strong>Water:</strong></p>
+<ol style="list-style-type: decimal">
+<li>Improved, not on premise versus unimproved source (unimproved and surface together)</li>
+<li>Improved on premise versus Improved, not on premise</li>
+<li>Improved, on premise, high water quality versus Improved, on premise, not HQ water</li>
+<li>Improved, on premise, sufficient water versus improved on premise, non-sufficient</li>
+<li>Improved, on premise, HQ water plus sufficient water versus improved, on premise, not HQ water and non-sufficient</li>
+</ol>
+<p><strong>Sanitation:</strong></p>
+<ol style="list-style-type: decimal">
+<li><ol>
+<li>Unimproved (no facility, unimproved and limited combined) (baseline)</li>
+<li>Basic, non-sewer</li>
+<li>Basic connected to sewer</li>
+</ol></li>
+<li><ol>
+<li>Unimproved (no facility, unimproved and limited combined) (baseline)</li>
+<li>Basic (&lt;75% coverage)</li>
+<li>Basic (≥75% coverage)</li>
+</ol></li>
+</ol>
+<div id="relative-risks-between-levels-of-drinking-water-access-and-binary-outcomes" class="section level3">
+<h3>Relative risks between levels of drinking water access and binary outcomes</h3>
 <p><img src="secondary_results_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
-<p><strong>Figure 11. Relative risks between levels of drinking water access conditions</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for child diarrheal disease. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. Note less studies are used to estimate the contrasts including water quality measurements due to sparse data.</p>
+<p><strong>Figure 11. Relative risks between levels of drinking water access conditions</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for child diarrheal disease, stunting, wasting, and acute respiratory infections (ARI). The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. Note that less studies are used to estimate the contrasts including water quality measurements due to sparse data.</p>
 </div>
-<div id="relative-risks-between-levels-of-sanitation-access-and-diarrheal-disease" class="section level3">
-<h3>Relative risks between levels of sanitation access and diarrheal disease</h3>
+<div id="relative-risks-between-levels-of-sanitation-access-and-binary-outcomes" class="section level3">
+<h3>Relative risks between levels of sanitation access and binary outcomes</h3>
 <p><img src="secondary_results_files/figure-html/unnamed-chunk-2-1.png" width="960" /></p>
-<p><strong>Figure 12. Relative risks across levels of household sanitation</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. The Y axis lists the type and level of sanitation characteristic, with the relative risk estimates between the printed reference levels and the higher-risk levels.</p>
+<p><strong>Figure 12. Relative risks across levels of household sanitation</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for child diarrheal disease, stunting, wasting, and acute respiratory infections (ARI). The Y axis lists the type and level of sanitation characteristic, with the relative risk estimates between the printed reference levels and the higher-risk levels.</p>
 </div>
 <div id="forest-plots-of-levels-of-water-access-and-relative-risks-of-diarrheal-disease" class="section level3">
 <h3>Forest plots of levels of water access and relative risks of diarrheal disease</h3>
@@ -466,7 +464,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "",
+      selectors: "h1,h2,h3",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -475,8 +473,8 @@ $(document).ready(function ()  {
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
     };
-    options.showAndHide = false;
-    options.smoothScroll = false;
+    options.showAndHide = true;
+    options.smoothScroll = true;
 
     // tocify
     var toc = $("#TOC").tocify(options).data("toc-tocify");

@@ -4,19 +4,19 @@ navbar:
   left:
     - text: "Methods"
       href: methods.html
-    - text: "Primary figs"
+    - text: "Primary"
       href: primary_results.html
-    - text: "Secondary figs"
+    - text: "Secondary"
       href: secondary_results.html
-    - text: "PAF figs"
+    - text: "PAF"
       href: paf_results.html
     - text: "Tables"
       href: tables.html
-    - text: "Regional figs"
+    - text: "Regional"
       href: regional_results.html
     - text: "Urban/rural"
       href: subgroup_results.html
-    - text: "Sensitivity figs"
+    - text: "Sensitivity"
       href: sensitivity_results.html
     - text: "Forest plots"
       href: supp_forest_plots.html

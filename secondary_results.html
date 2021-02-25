@@ -11,19 +11,33 @@
 
 
 
-<title>Regionally pooled estimates</title>
+<title>Secondary results</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/journal.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
-<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
-<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
 
 
 
@@ -88,33 +102,33 @@ summary {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 61px;
+  padding-top: 51px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
+  padding-top: 56px;
+  margin-top: -56px;
 }
 .dropdown-submenu {
   position: relative;
@@ -247,6 +261,9 @@ $(document).ready(function () {
 }
 
 @media print {
+#TOC {
+  display: none !important;
+}
 .toc-content {
   /* see https://github.com/w3c/csswg-drafts/issues/4434 */
   float: right;
@@ -293,6 +310,12 @@ div.tocify {
   border-radius: 0px;
 }
 
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
 
 </style>
 
@@ -372,54 +395,29 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Regionally pooled estimates</h1>
+<h1 class="title toc-ignore">Secondary results</h1>
 
 </div>
 
 
-<div id="interpretation" class="section level3">
-<h3>Interpretation</h3>
-<p>No clear pattern of differences between regions across WASH characteristic-outcome combinations, though due to the number of regions, and the different number of countries per region (which contributes to widely different confidence intervals), it is hard to systematically compare results. The interpretation of pooled regional estimates may benefit from dropping regions with few countries from the plots, or a pairwise comparison of regions of interest (for example, sub-Saharan Africa versus South Asia). I am open to suggestions.</p>
+<p><strong>Notes for all plots:</strong> Crossed points denote significant estimates at an alpha level of 0.05. Reference levels are printed under the X-axis or denoted in the plots. All presented estimates are adjusted for confounder based on the procedure outlined in the methods section.</p>
+<div id="relative-risks-between-levels-of-drinking-water-access-and-diarrheal-disease" class="section level3">
+<h3>Relative risks between levels of drinking water access and diarrheal disease</h3>
+<p><img src="secondary_results_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
+<p><strong>Figure 11. Relative risks between levels of drinking water access conditions</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for child diarrheal disease. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. Note less studies are used to estimate the contrasts including water quality measurements due to sparse data.</p>
 </div>
-<div id="relative-risks-between-measures-of-water-contamination-and-binary-outcomes" class="section level3">
-<h3>Relative risks between measures of water contamination and binary outcomes</h3>
-<p><img src="regional_results_files/figure-html/unnamed-chunk-1-1.png" width="960" /></p>
-<p><strong>Figure 1. Relative risks of measures of source and household water contamination</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. Panels are divided by outcome, with ARI standing for acute respiratory infection. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. For example, households with any level of E. coli contamination were compares to houses with uncontaminated HH water.</p>
+<div id="relative-risks-between-levels-of-sanitation-access-and-diarrheal-disease" class="section level3">
+<h3>Relative risks between levels of sanitation access and diarrheal disease</h3>
+<p><img src="secondary_results_files/figure-html/unnamed-chunk-2-1.png" width="960" /></p>
+<p><strong>Figure 12. Relative risks across levels of household sanitation</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. The Y axis lists the type and level of sanitation characteristic, with the relative risk estimates between the printed reference levels and the higher-risk levels.</p>
 </div>
-<div id="relative-risks-between-unimproved-wash-conditions-and-binary-outcomes" class="section level3">
-<h3>Relative risks between unimproved WASH conditions and binary outcomes</h3>
-<p><img src="regional_results_files/figure-html/unnamed-chunk-2-1.png" width="960" /></p>
-<p><strong>Figure 2. Relative risks of unimproved WASH conditions</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. The Y axis lists the unimproved or unsafe level of contrast, with the relative risk estimates between the improved reference level and the higher-risk level. For example, households with any level of E. coli contamination were compares to houses with uncontaminated HH water. Among other significant estimates, unimproved hygiene (no water and soap at handwashing station), unimproved sanitation, and unimproved combined WASH was associated with a higher risk of stunting, and unimproved combined WASH was associated with a higher risk of diarrhea, stunting, and mortality. Larger confidence intervals may represent associations estimated less precisely (e.g. for a rarer outcome like ARI) or represent heterogeneity between the country-specific estimates.</p>
+<div id="forest-plots-of-levels-of-water-access-and-relative-risks-of-diarrheal-disease" class="section level3">
+<h3>Forest plots of levels of water access and relative risks of diarrheal disease</h3>
+<p><img src="secondary_results_files/figure-html/unnamed-chunk-3-1.png" width="960" /><img src="secondary_results_files/figure-html/unnamed-chunk-3-2.png" width="960" /><img src="secondary_results_files/figure-html/unnamed-chunk-3-3.png" width="960" /><img src="secondary_results_files/figure-html/unnamed-chunk-3-4.png" width="960" /><img src="secondary_results_files/figure-html/unnamed-chunk-3-5.png" width="960" /></p>
 </div>
-<div id="relative-risks-between-levels-of-water-contamination-and-binary-outcomes" class="section level3">
-<h3>Relative risks between levels of water contamination and binary outcomes</h3>
-<p><img src="regional_results_files/figure-html/unnamed-chunk-3-1.png" width="960" /></p>
-<p><strong>Figure 3. Relative risks across degrees of source and household water contamination</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. The Y axis lists the level of water contamination, with the relative risk estimates between the reference level of no contamination and the higher-risk levels.</p>
-</div>
-<div id="relative-risks-between-levels-of-wash-service-and-binary-outcomes" class="section level3">
-<h3>Relative risks between levels of WASH service and binary outcomes</h3>
-<p><img src="regional_results_files/figure-html/unnamed-chunk-4-1.png" width="960" /></p>
-<p><strong>Figure 4. Relative risks across levels of household WASH characteristics</strong> Random-effects pooled relative risks, pooled over MICS surveys with water quality measurements, for the 5 binary outcomes. The Y axis lists the level of WASH characteristic, with the relative risk estimates between the printed reference levels and the higher-risk levels.</p>
-</div>
-<div id="z-score-differences-between-measures-of-water-contamination" class="section level3">
-<h3>Z-score differences between measures of water contamination</h3>
-<p><img src="regional_results_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
-<p><strong>Figure 5. Anthropometry Z-score differences between contaminated and uncontaminated measures of source and household water</strong> Random-effects pooled Z-score differences, pooled over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes.</p>
-</div>
-<div id="z-score-differences-between-unimproved-and-improved-wash-conditions" class="section level3">
-<h3>Z-score differences between unimproved and improved WASH conditions</h3>
-<p><img src="regional_results_files/figure-html/unnamed-chunk-6-1.png" width="960" /></p>
-<p><strong>Figure 6. Anthropometry Z-score differences between unimproved and improved measures of WASH conditions</strong> Random-effects pooled Z-score differences, pooled over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes.</p>
-</div>
-<div id="z-score-differences-between-levels-of-water-contamination" class="section level3">
-<h3>Z-score differences between levels of water contamination</h3>
-<p><img src="regional_results_files/figure-html/unnamed-chunk-7-1.png" width="960" /></p>
-<p><strong>Figure 7. Anthropometry Z-score differences across degrees of source and household water contamination</strong> Random-effects pooled Z-score differences, pooled over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes.</p>
-</div>
-<div id="z-score-differences-between-levels-of-wash-service" class="section level3">
-<h3>Z-score differences between levels of WASH service</h3>
-<p><img src="regional_results_files/figure-html/unnamed-chunk-8-1.png" width="960" /></p>
-<p><strong>Figure 8. Anthropometry Z-score differences across levels of household WASH characteristics</strong> Random-effects pooled Z-score differences, pooled over the MICS survey countries with water quality measures, for the height-for-age Z-score (HAZ) and weight-for-height Z-scores (WHZ) outcomes.</p>
+<div id="forest-plots-of-levels-of-sanitation-access-and-relative-risks-of-diarrheal-disease" class="section level3">
+<h3>Forest plots of levels of sanitation access and relative risks of diarrheal disease</h3>
+<p><img src="secondary_results_files/figure-html/unnamed-chunk-4-1.png" width="960" /><img src="secondary_results_files/figure-html/unnamed-chunk-4-2.png" width="960" /></p>
 </div>
 
 
@@ -468,7 +466,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3",
+      selectors: "",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
@@ -477,8 +475,8 @@ $(document).ready(function ()  {
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
     };
-    options.showAndHide = true;
-    options.smoothScroll = true;
+    options.showAndHide = false;
+    options.smoothScroll = false;
 
     // tocify
     var toc = $("#TOC").tocify(options).data("toc-tocify");

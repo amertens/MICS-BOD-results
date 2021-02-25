@@ -6,6 +6,8 @@ navbar:
       href: methods.html
     - text: "Primary results"
       href: primary_results.html
+    - text: "Secondary results"
+      href: secondary_results.html
     - text: "PAF figs"
       href: paf_results.html
     - text: "Tables"
